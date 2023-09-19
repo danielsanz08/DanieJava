@@ -202,10 +202,29 @@ public boolean isNumero (String numero){
       
         return false;
       }
+      
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        int num1=Integer.parseInt(TxtNumeroUno.getText());
+        int num2=Integer.parseInt(TxtNumeroDos.getText());
+        int num3=Integer.parseInt(TxtNumeroTres.getText());
+        
+        if(num1>num3 && num1>num3){
+       TxtResultado.setText(num1  +"Número mayor");
+        }if(num2>num1 && num2>num3){
+            TxtResultado.setText(num2  +"Número mayor");
+        }if(num3>num1 && num3>num2){
+            TxtResultado.setText(num2  +"Número mayor");}
+        
+        if(num1<num2 && num1>num3){
+       TxtResultado.setText(num1  +"Número mediano");
+        }if(num2>num1 && num2>num3){
+            TxtResultado.setText(num2  +"Número mayor");
+        }if(num3>num1 && num3>num2){
+            TxtResultado.setText(num2  +"Número mayor");}
+        
+        
        
 
     }//GEN-LAST:event_jButton1ActionPerformed
