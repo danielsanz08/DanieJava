@@ -8,14 +8,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Daniel
+ * @author Aprendiz
  */
-public class Form04 extends javax.swing.JFrame {
+public class Form06 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form04
+     * Creates new form Form06
      */
-    public Form04() {
+    public Form06() {
         initComponents();
     }
 
@@ -29,11 +29,15 @@ public class Form04 extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        TxtResultado = new javax.swing.JTextField();
-        LblResultado = new javax.swing.JLabel();
-        TxtNumeroUno = new javax.swing.JTextField();
-        LblNumeroUno = new javax.swing.JLabel();
+        TxtNumeroTres = new javax.swing.JTextField();
+        LblNumeroTres = new javax.swing.JLabel();
         LblDescripcion = new javax.swing.JLabel();
+        LblNumeroUno = new javax.swing.JLabel();
+        TxtNumeroUno = new javax.swing.JTextField();
+        LblNumeroDos = new javax.swing.JLabel();
+        TxtNumeroDos = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -53,56 +57,66 @@ public class Form04 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("<html><center>Calcular<center>");
+        jButton1.setText("<html><center>Mostrar<center>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(130, 290, 100, 30);
+        jButton1.setBounds(240, 300, 100, 31);
 
-        TxtResultado.setBackground(new java.awt.Color(255, 255, 255));
-        TxtResultado.setForeground(new java.awt.Color(0, 0, 0));
-        TxtResultado.addActionListener(new java.awt.event.ActionListener() {
+        TxtNumeroTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtResultadoActionPerformed(evt);
+                TxtNumeroTresActionPerformed(evt);
             }
         });
-        getContentPane().add(TxtResultado);
-        TxtResultado.setBounds(100, 420, 180, 80);
+        getContentPane().add(TxtNumeroTres);
+        TxtNumeroTres.setBounds(10, 340, 230, 50);
 
-        LblResultado.setBackground(new java.awt.Color(255, 255, 255));
-        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblResultado.setForeground(new java.awt.Color(0, 0, 0));
-        LblResultado.setText("<html><center>Resultado<center>");
-        getContentPane().add(LblResultado);
-        LblResultado.setBounds(120, 360, 130, 30);
+        LblNumeroTres.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblNumeroTres.setText("<html><center>Digite el número tres<center>");
+        getContentPane().add(LblNumeroTres);
+        LblNumeroTres.setBounds(10, 290, 200, 40);
 
-        TxtNumeroUno.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNumeroUno.setForeground(new java.awt.Color(0, 0, 0));
+        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblDescripcion.setText("<html><center>Digitar 3 números<center>");
+        getContentPane().add(LblDescripcion);
+        LblDescripcion.setBounds(100, 10, 200, 80);
+
+        LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblNumeroUno.setText("<html><center>Digite el número uno<center>");
+        getContentPane().add(LblNumeroUno);
+        LblNumeroUno.setBounds(10, 90, 210, 40);
+
         TxtNumeroUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNumeroUnoActionPerformed(evt);
             }
         });
         getContentPane().add(TxtNumeroUno);
-        TxtNumeroUno.setBounds(130, 170, 100, 50);
+        TxtNumeroUno.setBounds(10, 130, 230, 50);
 
-        LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroUno.setForeground(new java.awt.Color(0, 0, 0));
-        LblNumeroUno.setText("<html><center>Digite un número<center>");
-        getContentPane().add(LblNumeroUno);
-        LblNumeroUno.setBounds(100, 80, 170, 40);
+        LblNumeroDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblNumeroDos.setText("<html><center>Digite el número dos<center>");
+        getContentPane().add(LblNumeroDos);
+        LblNumeroDos.setBounds(10, 180, 200, 40);
 
-        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setForeground(new java.awt.Color(0, 0, 0));
-        LblDescripcion.setText("<html><center>Múltiplo de 2 y 3<center>");
-        getContentPane().add(LblDescripcion);
-        LblDescripcion.setBounds(80, 10, 200, 80);
+        TxtNumeroDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtNumeroDosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtNumeroDos);
+        TxtNumeroDos.setBounds(10, 230, 230, 50);
+
+        TxtResultado.setColumns(20);
+        TxtResultado.setRows(5);
+        jScrollPane1.setViewportView(TxtResultado);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(10, 400, 330, 110);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -177,7 +191,7 @@ public class Form04 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean Numero (String numero){
+public boolean isNumero (String numero){
       try{
           int Number = Integer.parseInt(numero);
           return true;
@@ -189,30 +203,25 @@ public boolean Numero (String numero){
         return false;
       }
     }
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(Numero(TxtNumeroUno.getText())){
-            int num = Integer.parseInt(TxtNumeroUno.getText());
-            if(num<=0){
-                JOptionPane.showMessageDialog(this, "Error", "ERROR", JOptionPane.ERROR_MESSAGE);
-            }else{
-                if((num %2 ==0) &&(num % 3 ==0)){
-                    TxtResultado.setText("El numero digitado es múltiplo de 2 y 3");
-                }else{
-                    TxtResultado.setText("El número no es múltiplo de 2 y 3");
-                }
-            }
-        }
+
+       
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void TxtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtResultadoActionPerformed
+    private void TxtNumeroTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroTresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtResultadoActionPerformed
+
+    }//GEN-LAST:event_TxtNumeroTresActionPerformed
 
     private void TxtNumeroUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroUnoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNumeroUnoActionPerformed
+
+    private void TxtNumeroDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtNumeroDosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,30 +240,33 @@ public boolean Numero (String numero){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form04.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form04.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form04.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form04.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form04().setVisible(true);
+                new Form06().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LblDescripcion;
+    private javax.swing.JLabel LblNumeroDos;
+    private javax.swing.JLabel LblNumeroTres;
     private javax.swing.JLabel LblNumeroUno;
-    private javax.swing.JLabel LblResultado;
+    private javax.swing.JTextField TxtNumeroDos;
+    private javax.swing.JTextField TxtNumeroTres;
     private javax.swing.JTextField TxtNumeroUno;
-    private javax.swing.JTextField TxtResultado;
+    private javax.swing.JTextArea TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -266,6 +278,7 @@ public boolean Numero (String numero){
     private javax.swing.JMenu helpMenu;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -25,6 +28,14 @@ public class Form05 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
+        LblDescripcion = new javax.swing.JLabel();
+        LblFechaUno = new javax.swing.JLabel();
+        TxtFechaUno = new javax.swing.JTextField();
+        LblResultado = new javax.swing.JLabel();
+        TxtResultado = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -41,6 +52,53 @@ public class Form05 extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblDescripcion.setText("<html><center>Mostrar fecha<center>");
+        getContentPane().add(LblDescripcion);
+        LblDescripcion.setBounds(100, 10, 200, 80);
+
+        LblFechaUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblFechaUno.setText("<html><center>Digite 8 números<center>");
+        getContentPane().add(LblFechaUno);
+        LblFechaUno.setBounds(100, 80, 170, 40);
+
+        TxtFechaUno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtFechaUnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtFechaUno);
+        TxtFechaUno.setBounds(70, 170, 230, 50);
+
+        LblResultado.setBackground(new java.awt.Color(255, 255, 255));
+        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblResultado.setText("<html><center>Fecha<center>");
+        getContentPane().add(LblResultado);
+        LblResultado.setBounds(120, 360, 130, 30);
+
+        TxtResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtResultadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtResultado);
+        TxtResultado.setBounds(90, 420, 180, 80);
+
+        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        jButton1.setText("<html><center>Mostrar<center>");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(130, 290, 100, 31);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 350, 520);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -105,23 +163,69 @@ public class Form05 extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+public boolean isNumero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
+
+    private void TxtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtResultadoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        String fecha = TxtFechaUno.getText();
+        if(fecha.length()==8){
+            if (isNumero(fecha)){
+                int number = Integer.parseInt(fecha);
+                if(number>0){
+                    int Anio = Integer.parseInt(TxtFechaUno.getText().substring(0, 4));
+                    int Mes = Integer.parseInt((String) TxtFechaUno.getText().subSequence(4, 6));
+                    int Dia = Integer.parseInt((String) TxtFechaUno.getText().subSequence(6, 8)); 
+                    
+                  
+                    if(Mes <=0 || Mes >12){
+                        JOptionPane.showMessageDialog(this, "Mes incorrecto; Debe ser mayor a 0 y menor a 12",
+                                "ERROR EN LA FECHA", JOptionPane.ERROR_MESSAGE);    
+                    }else if(Dia <=0 || Dia >31 ){
+                        JOptionPane.showMessageDialog(this, "Dia incorrecto;  Debe ser mayor a 0 y menor o igual a 31",
+                                "ERROR EN LA FECHA", JOptionPane.ERROR_MESSAGE); 
+                    }else{
+                        TxtResultado.setText(Anio+"/"+Mes+"/"+Dia);
+                    }
+                   
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "El numero " +TxtFechaUno+"Debe ser positivo",
+                                "Número inválido", JOptionPane.ERROR_MESSAGE); 
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Formato incorrecto" + TxtFechaUno+ "La longitud debe ser 8 ",
+                                "Número inválido", JOptionPane.ERROR_MESSAGE); 
+        }
+ 
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TxtFechaUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaUnoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TxtFechaUnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +263,11 @@ public class Form05 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LblDescripcion;
+    private javax.swing.JLabel LblFechaUno;
+    private javax.swing.JLabel LblResultado;
+    private javax.swing.JTextField TxtFechaUno;
+    private javax.swing.JTextField TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -168,6 +277,9 @@ public class Form05 extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
