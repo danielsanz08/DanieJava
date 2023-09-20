@@ -1,6 +1,5 @@
 
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,12 +10,12 @@ import javax.swing.JTextField;
  *
  * @author Aprendiz
  */
-public class Form06 extends javax.swing.JFrame {
+public class Form07 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form06
+     * Creates new form Form07
      */
-    public Form06() {
+    public Form07() {
         initComponents();
     }
 
@@ -29,14 +28,13 @@ public class Form06 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        TxtNumeroTres = new javax.swing.JTextField();
-        LblNumeroTres = new javax.swing.JLabel();
-        LblDescripcion = new javax.swing.JLabel();
-        LblNumeroUno = new javax.swing.JLabel();
-        TxtNumeroUno = new javax.swing.JTextField();
-        LblNumeroDos = new javax.swing.JLabel();
-        TxtNumeroDos = new javax.swing.JTextField();
+        LblResultado = new javax.swing.JLabel();
+        TxtCatetoDos = new javax.swing.JTextField();
+        LblCatetoDos = new javax.swing.JLabel();
+        LblTitulo = new javax.swing.JLabel();
+        BtnCalcular = new javax.swing.JButton();
+        TxtCatetoUno = new javax.swing.JTextField();
+        LblCatetoUno = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -58,70 +56,55 @@ public class Form06 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jButton1.setText("<html><center>Mostrar<center>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblResultado.setText("<html><center>Resultado</center>");
+        getContentPane().add(LblResultado);
+        LblResultado.setBounds(30, 410, 130, 40);
+
+        TxtCatetoDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        getContentPane().add(TxtCatetoDos);
+        TxtCatetoDos.setBounds(20, 270, 120, 40);
+
+        LblCatetoDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblCatetoDos.setText("<html><center>Cateto dos</center>");
+        getContentPane().add(LblCatetoDos);
+        LblCatetoDos.setBounds(10, 220, 210, 40);
+
+        LblTitulo.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblTitulo.setText("<html><center>Calcular la hipotenusa<center>");
+        getContentPane().add(LblTitulo);
+        LblTitulo.setBounds(90, 10, 140, 70);
+
+        BtnCalcular.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        BtnCalcular.setText("<html><center>Calcular</center>");
+        BtnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnCalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(240, 300, 100, 31);
+        getContentPane().add(BtnCalcular);
+        BtnCalcular.setBounds(220, 330, 110, 40);
 
-        TxtNumeroTres.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroTresActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtNumeroTres);
-        TxtNumeroTres.setBounds(10, 340, 230, 50);
+        TxtCatetoUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        getContentPane().add(TxtCatetoUno);
+        TxtCatetoUno.setBounds(20, 160, 120, 40);
 
-        LblNumeroTres.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroTres.setText("<html><center>Digite el número tres<center>");
-        getContentPane().add(LblNumeroTres);
-        LblNumeroTres.setBounds(10, 290, 200, 40);
-
-        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setText("<html><center>Digitar 3 números<center>");
-        getContentPane().add(LblDescripcion);
-        LblDescripcion.setBounds(100, 10, 200, 80);
-
-        LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroUno.setText("<html><center>Digite el número uno<center>");
-        getContentPane().add(LblNumeroUno);
-        LblNumeroUno.setBounds(10, 90, 210, 40);
-
-        TxtNumeroUno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroUnoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtNumeroUno);
-        TxtNumeroUno.setBounds(10, 130, 230, 50);
-
-        LblNumeroDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroDos.setText("<html><center>Digite el número dos<center>");
-        getContentPane().add(LblNumeroDos);
-        LblNumeroDos.setBounds(10, 180, 200, 40);
-
-        TxtNumeroDos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroDosActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtNumeroDos);
-        TxtNumeroDos.setBounds(10, 230, 230, 50);
+        LblCatetoUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblCatetoUno.setText("<html><center>Cateto uno:</center>");
+        getContentPane().add(LblCatetoUno);
+        LblCatetoUno.setBounds(10, 110, 220, 40);
 
         TxtResultado.setColumns(20);
+        TxtResultado.setFont(new java.awt.Font("Century Gothic", 3, 14)); // NOI18N
         TxtResultado.setRows(5);
         jScrollPane1.setViewportView(TxtResultado);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 400, 330, 110);
+        jScrollPane1.setBounds(20, 470, 320, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 520);
+        jLabel1.setBounds(0, 0, 350, 623);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -192,7 +175,7 @@ public class Form06 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
+      public boolean isNumero (String numero){
       try{
           int Number = Integer.parseInt(numero);
           return true;
@@ -203,46 +186,26 @@ public boolean isNumero (String numero){
       
         return false;
       }
-      
     }
-
-     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      
+    
+    private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
         // TODO add your handling code here:
-       
-            
-        
-         int num1=Integer.parseInt(TxtNumeroUno.getText());
-         int num2=Integer.parseInt(TxtNumeroDos.getText());
-         int num3=Integer.parseInt(TxtNumeroTres.getText());
+        float cUno=0;
+         float cDos=0;
+         double resultado = 0;
          
-       
-         if((num1==num2)&&(num1==num3)&&(num3==num2)&&(num3==num1)&&(num1==num2)&&(num1==num3)){
-             JOptionPane.showMessageDialog(this, "Números iguales",
-                     "IGUALES", JOptionPane.ERROR_MESSAGE);
-         }
-         if((num1==num2)||(num1==num3)||(num3==num2)||(num3==num1)||(num1==num2)||(num1==num3)){
-             JOptionPane.showMessageDialog(this, "Números iguales",
-                     "IGUALES", JOptionPane.ERROR_MESSAGE);
-         }
-         if(num1>num2){
+          cUno = Float.parseFloat(TxtCatetoUno.getText());
+          cDos = Float.parseFloat(TxtCatetoDos.getText());
+          if((cUno<=0) ||(cDos<=0)){
+              JOptionPane.showMessageDialog(this, "ERROR",
+                      "No permitido", JOptionPane.ERROR_MESSAGE);
+          }else{
+          resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
           
-         }
-         
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void TxtNumeroTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroTresActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_TxtNumeroTresActionPerformed
-
-    private void TxtNumeroUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroUnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNumeroUnoActionPerformed
-
-    private void TxtNumeroDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroDosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNumeroDosActionPerformed
+          TxtResultado.setText("La hipotenusa es :" +resultado); SSSSSSSSSSSSSSS
+          }
+    }//GEN-LAST:event_BtnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,32 +224,32 @@ public boolean isNumero (String numero){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form07.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form06().setVisible(true);
+                new Form07().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LblDescripcion;
-    private javax.swing.JLabel LblNumeroDos;
-    private javax.swing.JLabel LblNumeroTres;
-    private javax.swing.JLabel LblNumeroUno;
-    private javax.swing.JTextField TxtNumeroDos;
-    private javax.swing.JTextField TxtNumeroTres;
-    private javax.swing.JTextField TxtNumeroUno;
+    private javax.swing.JButton BtnCalcular;
+    private javax.swing.JLabel LblCatetoDos;
+    private javax.swing.JLabel LblCatetoUno;
+    private javax.swing.JLabel LblResultado;
+    private javax.swing.JLabel LblTitulo;
+    private javax.swing.JTextField TxtCatetoDos;
+    private javax.swing.JTextField TxtCatetoUno;
     private javax.swing.JTextArea TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
@@ -297,7 +260,6 @@ public boolean isNumero (String numero){
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
@@ -306,9 +268,5 @@ public boolean isNumero (String numero){
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
-
-    private boolean isNumero(JTextField TxtNumeroUno) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }
