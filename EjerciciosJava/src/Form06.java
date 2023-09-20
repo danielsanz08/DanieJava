@@ -209,21 +209,67 @@ public boolean isNumero (String numero){
         int num1=Integer.parseInt(TxtNumeroUno.getText());
         int num2=Integer.parseInt(TxtNumeroDos.getText());
         int num3=Integer.parseInt(TxtNumeroTres.getText());
+        String mayor="";
         
-        if(num1>num3 && num1>num3){
-       TxtResultado.setText(num1  +"Número mayor");
-        }if(num2>num1 && num2>num3){
-            TxtResultado.setText(num2  +"Número mayor");
-        }if(num3>num1 && num3>num2){
-            TxtResultado.setText(num2  +"Número mayor");}
-        
-        if(num1<num2 && num1>num3){
-       TxtResultado.setText(num1  +"Número mediano");
-        }if(num2>num1 && num2>num3){
-            TxtResultado.setText(num2  +"Número mayor");
-        }if(num3>num1 && num3>num2){
-            TxtResultado.setText(num2  +"Número mayor");}
-        
+        if (num1==num2 && num1==num3 ) {
+           JOptionPane.showMessageDialog(null, "Numeros iguales " +num1);
+       }
+       if (num2==num1 && num2==num3) {
+           JOptionPane.showMessageDialog(null, "Numeros iguales " +num2);
+       }
+       if (num3==num1 && num3==num2){
+           JOptionPane.showMessageDialog(null, "Numeros iguales " +num3);
+       }
+                if (num1>num2 && num1>num3){
+               JOptionPane.showMessageDialog(null, "Numero mayor " +num1);
+               }if (num2>num1 && num2>num3){
+               JOptionPane.showMessageDialog(null, "Numero mayor "+num2);
+
+               }if (num3>num1 && num3>num2) {
+               JOptionPane.showMessageDialog(null, "Numero mayor "+num3);
+                       }
+            
+                if (num1>num2){ 
+                    if (num1<num3){
+                 JOptionPane.showMessageDialog(null, "Numero del medio "+num1);
+                    }
+                }
+                if (num1>num3){ 
+                    if (num1<num2){
+                 JOptionPane.showMessageDialog(null, "Numero del medio "+num1);
+                    }
+                }
+
+                if (num2>num1){ 
+                    if (num2<num3){
+                 JOptionPane.showMessageDialog(null, "Numero deL medio "+num2);
+                    }
+                }
+                if (num2>num3){ 
+                    if (num2<num1){
+                 JOptionPane.showMessageDialog(null, "Numero del medio "+num2);
+                    }
+                }
+
+                if (num3>num1){ 
+                    if (num3<num2){
+                 JOptionPane.showMessageDialog(null, "Numero del medio "+num3);
+                    }
+                }
+                if (num3>num2){ 
+                    if (num3<num1){
+                 JOptionPane.showMessageDialog(null, "Numero del medio "+num3);
+                    }
+                }
+            
+                if (num1<num2 && num1<num3){
+               JOptionPane.showMessageDialog(null, "Numero menor " +num1);
+               }if (num2<num1 && num2<num3){
+               JOptionPane.showMessageDialog(null, "Numero menor "+num2);
+               }if (num3<num1 && num3<num2) {
+               JOptionPane.showMessageDialog(null, "Numero menor "+num3);
+          }        
+    }            
         
        
 
