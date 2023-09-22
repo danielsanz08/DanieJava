@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Daniel
+ * @author Aprendiz
  */
 public class Form05 extends javax.swing.JFrame {
 
@@ -28,13 +28,30 @@ public class Form05 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
+        jFrame1 = new javax.swing.JFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtResultado = new javax.swing.JTextArea();
+        menuBar1 = new javax.swing.JMenuBar();
+        fileMenu1 = new javax.swing.JMenu();
+        openMenuItem1 = new javax.swing.JMenuItem();
+        saveMenuItem1 = new javax.swing.JMenuItem();
+        saveAsMenuItem1 = new javax.swing.JMenuItem();
+        exitMenuItem1 = new javax.swing.JMenuItem();
+        editMenu1 = new javax.swing.JMenu();
+        cutMenuItem1 = new javax.swing.JMenuItem();
+        copyMenuItem1 = new javax.swing.JMenuItem();
+        pasteMenuItem1 = new javax.swing.JMenuItem();
+        deleteMenuItem1 = new javax.swing.JMenuItem();
+        helpMenu1 = new javax.swing.JMenu();
+        contentsMenuItem1 = new javax.swing.JMenuItem();
+        aboutMenuItem1 = new javax.swing.JMenuItem();
+        jPanel1 = new javax.swing.JPanel();
+        TxtFecha = new javax.swing.JTextField();
+        BtnMostrar = new javax.swing.JButton();
         LblDescripcion = new javax.swing.JLabel();
-        LblFechaUno = new javax.swing.JLabel();
-        TxtFechaUno = new javax.swing.JTextField();
+        LblFecha = new javax.swing.JLabel();
         LblResultado = new javax.swing.JLabel();
-        TxtResultado = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        TxtResultadoF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -51,53 +68,122 @@ public class Form05 extends javax.swing.JFrame {
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
 
+        jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jFrame1.getContentPane().setLayout(null);
+
+        TxtResultado.setColumns(20);
+        TxtResultado.setRows(5);
+        jScrollPane1.setViewportView(TxtResultado);
+
+        jFrame1.getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(10, 400, 330, 110);
+
+        fileMenu1.setMnemonic('f');
+        fileMenu1.setText("File");
+
+        openMenuItem1.setMnemonic('o');
+        openMenuItem1.setText("Open");
+        fileMenu1.add(openMenuItem1);
+
+        saveMenuItem1.setMnemonic('s');
+        saveMenuItem1.setText("Save");
+        fileMenu1.add(saveMenuItem1);
+
+        saveAsMenuItem1.setMnemonic('a');
+        saveAsMenuItem1.setText("Save As ...");
+        saveAsMenuItem1.setDisplayedMnemonicIndex(5);
+        fileMenu1.add(saveAsMenuItem1);
+
+        exitMenuItem1.setMnemonic('x');
+        exitMenuItem1.setText("Exit");
+        exitMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitMenuItem1ActionPerformed(evt);
+            }
+        });
+        fileMenu1.add(exitMenuItem1);
+
+        menuBar1.add(fileMenu1);
+
+        editMenu1.setMnemonic('e');
+        editMenu1.setText("Edit");
+
+        cutMenuItem1.setMnemonic('t');
+        cutMenuItem1.setText("Cut");
+        editMenu1.add(cutMenuItem1);
+
+        copyMenuItem1.setMnemonic('y');
+        copyMenuItem1.setText("Copy");
+        editMenu1.add(copyMenuItem1);
+
+        pasteMenuItem1.setMnemonic('p');
+        pasteMenuItem1.setText("Paste");
+        editMenu1.add(pasteMenuItem1);
+
+        deleteMenuItem1.setMnemonic('d');
+        deleteMenuItem1.setText("Delete");
+        editMenu1.add(deleteMenuItem1);
+
+        menuBar1.add(editMenu1);
+
+        helpMenu1.setMnemonic('h');
+        helpMenu1.setText("Help");
+
+        contentsMenuItem1.setMnemonic('c');
+        contentsMenuItem1.setText("Contents");
+        helpMenu1.add(contentsMenuItem1);
+
+        aboutMenuItem1.setMnemonic('a');
+        aboutMenuItem1.setText("About");
+        helpMenu1.add(aboutMenuItem1);
+
+        menuBar1.add(helpMenu1);
+
+        jFrame1.setJMenuBar(menuBar1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+
+        jPanel1.setLayout(null);
+
+        TxtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtFechaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TxtFecha);
+        TxtFecha.setBounds(20, 170, 230, 50);
+
+        BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        BtnMostrar.setText("<html><center>Mostrar<center>");
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnMostrar);
+        BtnMostrar.setBounds(90, 280, 140, 50);
 
         LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setText("<html><center>Mostrar fecha<center>");
-        getContentPane().add(LblDescripcion);
+        LblDescripcion.setText("<html><center>Digitar 8 números<center>");
+        jPanel1.add(LblDescripcion);
         LblDescripcion.setBounds(100, 10, 200, 80);
 
-        LblFechaUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblFechaUno.setText("<html><center>Digite 8 números<center>");
-        getContentPane().add(LblFechaUno);
-        LblFechaUno.setBounds(100, 80, 170, 40);
+        LblFecha.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblFecha.setText("<html><center>Digite 8 números<center>");
+        jPanel1.add(LblFecha);
+        LblFecha.setBounds(20, 80, 210, 40);
 
-        TxtFechaUno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtFechaUnoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtFechaUno);
-        TxtFechaUno.setBounds(70, 170, 230, 50);
-
-        LblResultado.setBackground(new java.awt.Color(255, 255, 255));
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblResultado.setText("<html><center>Fecha<center>");
-        getContentPane().add(LblResultado);
-        LblResultado.setBounds(120, 360, 130, 30);
+        jPanel1.add(LblResultado);
+        LblResultado.setBounds(110, 360, 90, 40);
 
-        TxtResultado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtResultadoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtResultado);
-        TxtResultado.setBounds(90, 420, 180, 80);
-
-        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jButton1.setText("<html><center>Mostrar<center>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(130, 290, 100, 31);
+        TxtResultadoF.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
+        jPanel1.add(TxtResultadoF);
+        TxtResultadoF.setBounds(20, 410, 300, 90);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
+        jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 350, 520);
 
         fileMenu.setMnemonic('f');
@@ -163,6 +249,17 @@ public class Form05 extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+        );
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,52 +277,55 @@ public boolean isNumero (String numero){
       
         return false;
       }
+      
     }
 
-    private void TxtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtResultadoActionPerformed
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtResultadoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       String fecha = TxtFecha.getText();
+       if(fecha.length()==8){
+           if(isNumero(fecha)){
+           int number = Integer.parseInt(fecha);
+           if(number>0){
+               int Anio = Integer.parseInt(TxtFecha.getText().substring(0, 4));
+               int Mes = Integer.parseInt(TxtFecha.getText().substring(4, 6));
+               int dia = Integer.parseInt(TxtFecha.getText().substring(6, 8));
+               if(Mes <=0|| Mes >12){
+                   JOptionPane.showMessageDialog(this, "ERROR EN LA FECHA",
+                           "FECHA NO VÁLIDA", JOptionPane.ERROR_MESSAGE);
+               }else if(dia<=0 || dia>31){
+                   JOptionPane.showMessageDialog(this, "ERROR EN EL DIA",
+                           "DIA NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
+               }else{
+                   TxtResultadoF.setText(Anio+"/"+Mes+"/"+dia);
+               }
+           }else{
+               JOptionPane.showMessageDialog(this, "El nunmero"+TxtFecha+"debe ser positivo",
+                           "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
+           }
+       }else{
+               JOptionPane.showMessageDialog(this, "No se permite mayor a 8",
+                           "Cantidad no permitidaS", JOptionPane.ERROR_MESSAGE);
+           }
+       } else if(fecha.length()>8){
+           JOptionPane.showMessageDialog(this, "FORMATO INCORRECTO",
+                           "FORMATO NO VALIDO", JOptionPane.ERROR_MESSAGE);
+       }else{
+           JOptionPane.showMessageDialog(this, "Deben ser 8 digitos",
+                           "FORMATO NO VALIDO", JOptionPane.ERROR_MESSAGE);
+       }
+       
+
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
+    private void TxtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaActionPerformed
         // TODO add your handling code here:
-        
-        String fecha = TxtFechaUno.getText();
-        if(fecha.length()==8){
-            if (isNumero(fecha)){
-                int number = Integer.parseInt(fecha);
-                if(number>0){
-                    int Anio = Integer.parseInt(TxtFechaUno.getText().substring(0, 4));
-                    int Mes = Integer.parseInt((String) TxtFechaUno.getText().subSequence(4, 6));
-                    int Dia = Integer.parseInt((String) TxtFechaUno.getText().subSequence(6, 8)); 
-                    
-                  
-                    if(Mes <=0 || Mes >12){
-                        JOptionPane.showMessageDialog(this, "Mes incorrecto; Debe ser mayor a 0 y menor a 12",
-                                "ERROR EN LA FECHA", JOptionPane.ERROR_MESSAGE);    
-                    }else if(Dia <=0 || Dia >31 ){
-                        JOptionPane.showMessageDialog(this, "Dia incorrecto;  Debe ser mayor a 0 y menor o igual a 31",
-                                "ERROR EN LA FECHA", JOptionPane.ERROR_MESSAGE); 
-                    }else{
-                        TxtResultado.setText(Anio+"/"+Mes+"/"+Dia);
-                    }
-                   
-                }
-            }else{
-                JOptionPane.showMessageDialog(this, "El numero " +TxtFechaUno+"Debe ser positivo",
-                                "Número inválido", JOptionPane.ERROR_MESSAGE); 
-            }
-        }else{
-            JOptionPane.showMessageDialog(this, "Formato incorrecto" + TxtFechaUno+ "La longitud debe ser 8 ",
-                                "Número inválido", JOptionPane.ERROR_MESSAGE); 
-        }
- 
+    }//GEN-LAST:event_TxtFechaActionPerformed
 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void TxtFechaUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaUnoActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_TxtFechaUnoActionPerformed
+    private void exitMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,28 +363,45 @@ public boolean isNumero (String numero){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMostrar;
     private javax.swing.JLabel LblDescripcion;
-    private javax.swing.JLabel LblFechaUno;
+    private javax.swing.JLabel LblFecha;
     private javax.swing.JLabel LblResultado;
-    private javax.swing.JTextField TxtFechaUno;
-    private javax.swing.JTextField TxtResultado;
+    private javax.swing.JTextField TxtFecha;
+    private javax.swing.JTextArea TxtResultado;
+    private javax.swing.JTextField TxtResultadoF;
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem aboutMenuItem1;
     private javax.swing.JMenuItem contentsMenuItem;
+    private javax.swing.JMenuItem contentsMenuItem1;
     private javax.swing.JMenuItem copyMenuItem;
+    private javax.swing.JMenuItem copyMenuItem1;
     private javax.swing.JMenuItem cutMenuItem;
+    private javax.swing.JMenuItem cutMenuItem1;
     private javax.swing.JMenuItem deleteMenuItem;
+    private javax.swing.JMenuItem deleteMenuItem1;
     private javax.swing.JMenu editMenu;
+    private javax.swing.JMenu editMenu1;
     private javax.swing.JMenuItem exitMenuItem;
+    private javax.swing.JMenuItem exitMenuItem1;
     private javax.swing.JMenu fileMenu;
+    private javax.swing.JMenu fileMenu1;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JMenu helpMenu1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenuBar menuBar1;
     private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JMenuItem openMenuItem1;
     private javax.swing.JMenuItem pasteMenuItem;
+    private javax.swing.JMenuItem pasteMenuItem1;
     private javax.swing.JMenuItem saveAsMenuItem;
+    private javax.swing.JMenuItem saveAsMenuItem1;
     private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenuItem saveMenuItem1;
     // End of variables declaration//GEN-END:variables
 
 }

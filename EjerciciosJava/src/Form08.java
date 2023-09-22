@@ -1,6 +1,5 @@
 
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,12 +10,12 @@ import javax.swing.JTextField;
  *
  * @author Aprendiz
  */
-public class Form06 extends javax.swing.JFrame {
+public class Form08 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form06
+     * Creates new form Form08
      */
-    public Form06() {
+    public Form08() {
         initComponents();
     }
 
@@ -29,16 +28,17 @@ public class Form06 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        TxtNumeroTres = new javax.swing.JTextField();
-        LblNumeroTres = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         LblDescripcion = new javax.swing.JLabel();
-        LblNumeroUno = new javax.swing.JLabel();
-        TxtNumeroUno = new javax.swing.JTextField();
-        LblNumeroDos = new javax.swing.JLabel();
-        TxtNumeroDos = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TxtResultado = new javax.swing.JTextArea();
+        LblAnio = new javax.swing.JLabel();
+        TxtAnio = new javax.swing.JTextField();
+        LblMes = new javax.swing.JLabel();
+        TxtMes = new javax.swing.JTextField();
+        LblDia = new javax.swing.JLabel();
+        TxtDia = new javax.swing.JTextField();
+        BtnMostrar = new javax.swing.JButton();
+        LblFecha = new javax.swing.JLabel();
+        TxtFechaFinal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -56,71 +56,80 @@ public class Form06 extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jButton1.setText("<html><center>Mostrar<center>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(240, 300, 100, 31);
-
-        TxtNumeroTres.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroTresActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtNumeroTres);
-        TxtNumeroTres.setBounds(10, 340, 230, 50);
-
-        LblNumeroTres.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroTres.setText("<html><center>Digite el número tres<center>");
-        getContentPane().add(LblNumeroTres);
-        LblNumeroTres.setBounds(10, 290, 200, 40);
+        jPanel1.setLayout(null);
 
         LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setText("<html><center>Digitar 3 números<center>");
-        getContentPane().add(LblDescripcion);
+        LblDescripcion.setText("<html><center>Digitar 8 números<center>");
+        jPanel1.add(LblDescripcion);
         LblDescripcion.setBounds(100, 10, 200, 80);
 
-        LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroUno.setText("<html><center>Digite el número uno<center>");
-        getContentPane().add(LblNumeroUno);
-        LblNumeroUno.setBounds(10, 90, 210, 40);
+        LblAnio.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        LblAnio.setText("<html><center>Digite el año</center>");
+        jPanel1.add(LblAnio);
+        LblAnio.setBounds(20, 100, 150, 30);
 
-        TxtNumeroUno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroUnoActionPerformed(evt);
+        TxtAnio.setFont(new java.awt.Font("Cascadia Code", 3, 18)); // NOI18N
+        TxtAnio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtAnioMouseEntered(evt);
             }
         });
-        getContentPane().add(TxtNumeroUno);
-        TxtNumeroUno.setBounds(10, 130, 230, 50);
-
-        LblNumeroDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroDos.setText("<html><center>Digite el número dos<center>");
-        getContentPane().add(LblNumeroDos);
-        LblNumeroDos.setBounds(10, 180, 200, 40);
-
-        TxtNumeroDos.addActionListener(new java.awt.event.ActionListener() {
+        TxtAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroDosActionPerformed(evt);
+                TxtAnioActionPerformed(evt);
             }
         });
-        getContentPane().add(TxtNumeroDos);
-        TxtNumeroDos.setBounds(10, 230, 230, 50);
+        jPanel1.add(TxtAnio);
+        TxtAnio.setBounds(20, 150, 120, 28);
 
-        TxtResultado.setColumns(20);
-        TxtResultado.setRows(5);
-        jScrollPane1.setViewportView(TxtResultado);
+        LblMes.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        LblMes.setText("<html><center>Digite el mes</center>");
+        jPanel1.add(LblMes);
+        LblMes.setBounds(20, 200, 140, 20);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 400, 330, 110);
+        TxtMes.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        TxtMes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtMesKeyPressed(evt);
+            }
+        });
+        jPanel1.add(TxtMes);
+        TxtMes.setBounds(20, 230, 90, 30);
 
+        LblDia.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        LblDia.setText("<html><center>Digite el día</center>");
+        jPanel1.add(LblDia);
+        LblDia.setBounds(20, 280, 110, 20);
+
+        TxtDia.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        jPanel1.add(TxtDia);
+        TxtDia.setBounds(20, 320, 90, 30);
+
+        BtnMostrar.setBackground(new java.awt.Color(255, 0, 0));
+        BtnMostrar.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        BtnMostrar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnMostrar.setText("<html><center>Mostrar</center>");
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnMostrar);
+        BtnMostrar.setBounds(230, 320, 100, 50);
+
+        LblFecha.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        LblFecha.setText("<html><center>Fecha</center>");
+        jPanel1.add(LblFecha);
+        LblFecha.setBounds(30, 380, 70, 23);
+
+        TxtFechaFinal.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        jPanel1.add(TxtFechaFinal);
+        TxtFechaFinal.setBounds(20, 430, 120, 40);
+
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
+        jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 350, 520);
 
         fileMenu.setMnemonic('f');
@@ -186,6 +195,17 @@ public class Form06 extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+        );
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -205,54 +225,37 @@ public boolean isNumero (String numero){
       }
       
     }
-
-     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
-        int mayor=0;
-        int menor=0;
-        int medio=0;
-      
-           int num1=Integer.parseInt(TxtNumeroUno.getText());
-       int num2=Integer.parseInt(TxtNumeroDos.getText());
-       int num3= Integer.parseInt(TxtNumeroTres.getText());
+        String fecha= TxtFechaFinal.getText();
+        String Anio = TxtAnio.getText();
+        String Mes = TxtMes.getText();
+        String Dia = TxtDia.getText();
         
-       if((num1<=0)||(num2<=0)||(num3<=0)){
-           JOptionPane.showMessageDialog(this, "ERROR", "No permitido", JOptionPane.ERROR_MESSAGE);
-       }
-       //Encontrar que número es el mayor, del medio y el menor 
-       if((num1>num2)&&(num1>num3)){
-            mayor = num1;
-            medio = Math.max(num2, num3);
-            menor = Math.min(num2, num3); 
-       }else if((num2>num1)&&(num2>num3)){
-            mayor= num2;
-            medio = Math.max(num1, num3);
-            menor= Math.min(num1, num3);
-       }else{
-            mayor= num3;
-            medio =Math.max(num1, num2);
-            menor = Math.min(num1, num2);
-       }
-       //Mostrar resultado
-       TxtResultado.setText(mayor+"El número es el mayor \n"+medio+"El número es el del medio \n"+menor+"El numero es el menor");
-       
-    
-         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+                
+        
+        
+    }//GEN-LAST:event_BtnMostrarActionPerformed
 
-    private void TxtNumeroTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroTresActionPerformed
+    private void TxtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAnioActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_TxtAnioActionPerformed
 
-    }//GEN-LAST:event_TxtNumeroTresActionPerformed
-
-    private void TxtNumeroUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroUnoActionPerformed
+    private void TxtAnioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtAnioMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNumeroUnoActionPerformed
+    }//GEN-LAST:event_TxtAnioMouseEntered
 
-    private void TxtNumeroDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroDosActionPerformed
+    private void TxtMesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtMesKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtNumeroDosActionPerformed
+        String Mes = TxtMes.getText();
+        if(Mes.equalsIgnoreCase("02")){
+          JOptionPane.showMessageDialog(this, "Para el mes de Febrero puedes digitar hasta el 28",
+                  "FEBRERO", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_TxtMesKeyPressed
+
+ 
 
     /**
      * @param args the command line arguments
@@ -271,33 +274,35 @@ public boolean isNumero (String numero){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form06.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form08.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form06().setVisible(true);
+                new Form08().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMostrar;
+    private javax.swing.JLabel LblAnio;
     private javax.swing.JLabel LblDescripcion;
-    private javax.swing.JLabel LblNumeroDos;
-    private javax.swing.JLabel LblNumeroTres;
-    private javax.swing.JLabel LblNumeroUno;
-    private javax.swing.JTextField TxtNumeroDos;
-    private javax.swing.JTextField TxtNumeroTres;
-    private javax.swing.JTextField TxtNumeroUno;
-    private javax.swing.JTextArea TxtResultado;
+    private javax.swing.JLabel LblDia;
+    private javax.swing.JLabel LblFecha;
+    private javax.swing.JLabel LblMes;
+    private javax.swing.JTextField TxtAnio;
+    private javax.swing.JTextField TxtDia;
+    private javax.swing.JTextField TxtFechaFinal;
+    private javax.swing.JTextField TxtMes;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -307,18 +312,13 @@ public boolean isNumero (String numero){
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
-
-    private boolean isNumero(JTextField TxtNumeroUno) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
 }

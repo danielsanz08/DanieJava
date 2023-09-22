@@ -203,7 +203,7 @@ public class Form07 extends javax.swing.JFrame {
           }else{
           resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
           
-          TxtResultado.setText("La hipotenusa es :" +resultado); SSSSSSSSSSSSSSS
+          TxtResultado.setText("La hipotenusa es :" +resultado); 
           }
     }//GEN-LAST:event_BtnCalcularActionPerformed
 
