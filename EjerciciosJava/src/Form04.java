@@ -53,9 +53,7 @@ public class Form04 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("<html><center>Calcular<center>");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,50 +61,46 @@ public class Form04 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(130, 290, 100, 30);
+        jButton1.setBounds(290, 140, 100, 29);
 
-        TxtResultado.setBackground(new java.awt.Color(255, 255, 255));
-        TxtResultado.setForeground(new java.awt.Color(0, 0, 0));
         TxtResultado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtResultadoActionPerformed(evt);
             }
         });
         getContentPane().add(TxtResultado);
-        TxtResultado.setBounds(100, 420, 180, 80);
+        TxtResultado.setBounds(180, 270, 280, 80);
 
         LblResultado.setBackground(new java.awt.Color(255, 255, 255));
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblResultado.setForeground(new java.awt.Color(0, 0, 0));
         LblResultado.setText("<html><center>Resultado<center>");
+        LblResultado.setOpaque(true);
         getContentPane().add(LblResultado);
-        LblResultado.setBounds(120, 360, 130, 30);
+        LblResultado.setBounds(30, 290, 130, 30);
 
-        TxtNumeroUno.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNumeroUno.setForeground(new java.awt.Color(0, 0, 0));
         TxtNumeroUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtNumeroUnoActionPerformed(evt);
             }
         });
         getContentPane().add(TxtNumeroUno);
-        TxtNumeroUno.setBounds(130, 170, 100, 50);
+        TxtNumeroUno.setBounds(50, 160, 100, 50);
 
         LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumeroUno.setForeground(new java.awt.Color(0, 0, 0));
         LblNumeroUno.setText("<html><center>Digite un número<center>");
+        LblNumeroUno.setOpaque(true);
         getContentPane().add(LblNumeroUno);
-        LblNumeroUno.setBounds(100, 80, 170, 40);
+        LblNumeroUno.setBounds(40, 100, 170, 40);
 
         LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setForeground(new java.awt.Color(0, 0, 0));
         LblDescripcion.setText("<html><center>Múltiplo de 2 y 3<center>");
+        LblDescripcion.setOpaque(true);
         getContentPane().add(LblDescripcion);
-        LblDescripcion.setBounds(80, 10, 200, 80);
+        LblDescripcion.setBounds(140, 10, 200, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 520);
+        jLabel1.setBounds(0, 0, 500, 370);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

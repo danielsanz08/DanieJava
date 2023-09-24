@@ -58,11 +58,14 @@ public class Form01 extends javax.swing.JFrame {
 
         LblTitulo.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblTitulo.setText("<html><center>Dividir 2 números<center>");
+        LblTitulo.setOpaque(true);
         getContentPane().add(LblTitulo);
         LblTitulo.setBounds(90, 10, 140, 70);
 
+        LblNumeroUno.setBackground(new java.awt.Color(255, 255, 255));
         LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblNumeroUno.setText("<html><center>Digite el número uno</center>");
+        LblNumeroUno.setOpaque(true);
         getContentPane().add(LblNumeroUno);
         LblNumeroUno.setBounds(10, 110, 220, 40);
 
@@ -72,6 +75,7 @@ public class Form01 extends javax.swing.JFrame {
 
         LblNumeroDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblNumeroDos.setText("<html><center>Digite el número dos</center>");
+        LblNumeroDos.setOpaque(true);
         getContentPane().add(LblNumeroDos);
         LblNumeroDos.setBounds(10, 220, 210, 40);
 
@@ -81,8 +85,9 @@ public class Form01 extends javax.swing.JFrame {
 
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblResultado.setText("<html><center>Resultado</center>");
+        LblResultado.setOpaque(true);
         getContentPane().add(LblResultado);
-        LblResultado.setBounds(30, 410, 130, 40);
+        LblResultado.setBounds(30, 330, 130, 40);
 
         TxtResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         TxtResultado.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +96,7 @@ public class Form01 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(TxtResultado);
-        TxtResultado.setBounds(30, 480, 120, 40);
+        TxtResultado.setBounds(30, 400, 120, 40);
 
         BtnCalcular.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         BtnCalcular.setText("<html><center>Calcular</center>");
@@ -101,11 +106,11 @@ public class Form01 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnCalcular);
-        BtnCalcular.setBounds(220, 330, 110, 40);
+        BtnCalcular.setBounds(220, 280, 110, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 623);
+        jLabel1.setBounds(0, 0, 350, 480);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

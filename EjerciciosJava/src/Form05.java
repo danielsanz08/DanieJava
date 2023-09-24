@@ -151,7 +151,7 @@ public class Form05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(TxtFecha);
-        TxtFecha.setBounds(20, 170, 230, 50);
+        TxtFecha.setBounds(10, 190, 230, 50);
 
         BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         BtnMostrar.setText("<html><center>Mostrar<center>");
@@ -161,17 +161,19 @@ public class Form05 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnMostrar);
-        BtnMostrar.setBounds(90, 280, 140, 50);
+        BtnMostrar.setBounds(330, 150, 140, 50);
 
         LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblDescripcion.setText("<html><center>Digitar 8 números<center>");
+        LblDescripcion.setOpaque(true);
         jPanel1.add(LblDescripcion);
         LblDescripcion.setBounds(100, 10, 200, 80);
 
         LblFecha.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblFecha.setText("<html><center>Digite 8 números<center>");
+        LblFecha.setOpaque(true);
         jPanel1.add(LblFecha);
-        LblFecha.setBounds(20, 80, 210, 40);
+        LblFecha.setBounds(20, 120, 210, 40);
 
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblResultado.setText("<html><center>Fecha<center>");
@@ -180,11 +182,11 @@ public class Form05 extends javax.swing.JFrame {
 
         TxtResultadoF.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
         jPanel1.add(TxtResultadoF);
-        TxtResultadoF.setBounds(20, 410, 300, 90);
+        TxtResultadoF.setBounds(80, 270, 300, 90);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 520);
+        jLabel1.setBounds(0, 0, 500, 380);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -253,11 +255,13 @@ public class Form05 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 140, Short.MAX_VALUE))
         );
 
         pack();

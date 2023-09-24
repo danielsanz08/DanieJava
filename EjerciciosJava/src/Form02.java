@@ -55,11 +55,13 @@ public class Form02 extends javax.swing.JFrame {
 
         LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblDescripcion.setText("<html><center>Números pares e impares<center>");
+        LblDescripcion.setOpaque(true);
         getContentPane().add(LblDescripcion);
         LblDescripcion.setBounds(80, 10, 200, 80);
 
         LblNumeroUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblNumeroUno.setText("<html><center>Digite un número<center>");
+        LblNumeroUno.setOpaque(true);
         getContentPane().add(LblNumeroUno);
         LblNumeroUno.setBounds(100, 110, 170, 40);
 
@@ -81,6 +83,7 @@ public class Form02 extends javax.swing.JFrame {
 
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblResultado.setText("<html><center>Resultado<center>");
+        LblResultado.setOpaque(true);
         getContentPane().add(LblResultado);
         LblResultado.setBounds(120, 360, 130, 30);
 
@@ -95,9 +98,9 @@ public class Form02 extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(180, 240, 120, 50);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 350, 520);
+        jLabel2.setBounds(0, 0, 350, 480);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

@@ -66,7 +66,7 @@ public class Form06 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(240, 300, 100, 31);
+        jButton1.setBounds(240, 300, 100, 29);
 
         TxtNumeroTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

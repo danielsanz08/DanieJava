@@ -1,4 +1,5 @@
 
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /*
@@ -39,6 +40,7 @@ public class Form08 extends javax.swing.JFrame {
         BtnMostrar = new javax.swing.JButton();
         LblFecha = new javax.swing.JLabel();
         TxtFechaFinal = new javax.swing.JTextField();
+        CmbUno = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -66,6 +68,7 @@ public class Form08 extends javax.swing.JFrame {
 
         LblAnio.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         LblAnio.setText("<html><center>Digite el año</center>");
+        LblAnio.setOpaque(true);
         jPanel1.add(LblAnio);
         LblAnio.setBounds(20, 100, 150, 30);
 
@@ -80,11 +83,17 @@ public class Form08 extends javax.swing.JFrame {
                 TxtAnioActionPerformed(evt);
             }
         });
+        TxtAnio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtAnioKeyPressed(evt);
+            }
+        });
         jPanel1.add(TxtAnio);
-        TxtAnio.setBounds(20, 150, 120, 28);
+        TxtAnio.setBounds(20, 150, 120, 30);
 
         LblMes.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         LblMes.setText("<html><center>Digite el mes</center>");
+        LblMes.setOpaque(true);
         jPanel1.add(LblMes);
         LblMes.setBounds(20, 200, 140, 20);
 
@@ -99,6 +108,7 @@ public class Form08 extends javax.swing.JFrame {
 
         LblDia.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
         LblDia.setText("<html><center>Digite el día</center>");
+        LblDia.setOpaque(true);
         jPanel1.add(LblDia);
         LblDia.setBounds(20, 280, 110, 20);
 
@@ -127,10 +137,14 @@ public class Form08 extends javax.swing.JFrame {
         jPanel1.add(TxtFechaFinal);
         TxtFechaFinal.setBounds(20, 430, 120, 40);
 
+        CmbUno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "Año Normal", "Año Biciesto", " " }));
+        jPanel1.add(CmbUno);
+        CmbUno.setBounds(290, 120, 160, 40);
+
         jLabel1.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arc.gif"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 520);
+        jLabel1.setBounds(0, 0, 480, 490);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -199,11 +213,11 @@ public class Form08 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
 
         pack();
@@ -224,18 +238,80 @@ public boolean isNumero (String numero){
         return false;
       }
       
+ 
+      
     }
+     public void MostrarFecha(){
+         
+     }
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
-        String fecha= TxtFechaFinal.getText();
-        String Anio = TxtAnio.getText();
-        String Mes = TxtMes.getText();
-        String Dia = TxtDia.getText();
-        
-        
+       
+        JComboBox<String> OpAnio = CmbUno;
+         String AnioSeleccionado = (String) CmbUno.getSelectedItem();
+         
+         //Uso de la sentencia if
+         if(AnioSeleccionado.equals("Año Normal")){
+             String Anio = TxtAnio.getText();
+            if(Anio.length()<4){
+                JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
+                        "Año no válido", JOptionPane.ERROR_MESSAGE);
+            }else if(Anio.length()>4){
+                JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
+                        "Año no válido", JOptionPane.ERROR_MESSAGE);
+            }
+             int Mes = Integer.parseInt(TxtMes.getText());
+             int Dia = Integer.parseInt(TxtDia.getText());
+             if(Mes<0 || Mes >12){
+                 JOptionPane.showMessageDialog(this, "El mes debe ser entre el numero 1 y numero 12",
+                        "Mes no válido", JOptionPane.ERROR_MESSAGE);
                 
-        
-        
+             }
+             if(Dia<=0 || Dia>31){
+                 JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 31",
+                        "Dia no válido", JOptionPane.ERROR_MESSAGE);
+             }
+             if(Mes==02){
+                 if(Dia<=0 || Dia>28){
+                     JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 28",
+                        "Dia no válido", JOptionPane.ERROR_MESSAGE);
+             
+                 }else{
+                     TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
+                 }
+             }
+         }
+          if(AnioSeleccionado.equals("Año Biciesto")){
+              String Anio = TxtAnio.getText();
+              if(Anio.length()<4){
+                JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
+                        "Año no válido", JOptionPane.ERROR_MESSAGE);
+            }else if(Anio.length()>4){
+                JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
+                        "Año no válido", JOptionPane.ERROR_MESSAGE);
+            }
+              int Mes = Integer.parseInt(TxtMes.getText());
+             int Dia = Integer.parseInt(TxtDia.getText());
+             if(Mes<0 || Mes >12){
+                 JOptionPane.showMessageDialog(this, "El mes debe ser entre el numero 1 y numero 12",
+                        "Mes no válido", JOptionPane.ERROR_MESSAGE);
+                
+             }
+             if(Dia<=0 || Dia>31){
+                 JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 31",
+                        "Dia no válido", JOptionPane.ERROR_MESSAGE);
+             }ss
+             if(Mes==02){
+                 if(Dia<=0 || Dia>29){
+                     JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 29 teniendo en cuenta que elegiste Año biciesto",
+                        "Dia no válido", JOptionPane.ERROR_MESSAGE);
+             
+                 }else{
+                     TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
+                 }
+             }
+          } 
+         
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
     private void TxtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAnioActionPerformed
@@ -245,15 +321,19 @@ public boolean isNumero (String numero){
     private void TxtAnioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtAnioMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtAnioMouseEntered
-
+     
     private void TxtMesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtMesKeyPressed
         // TODO add your handling code here:
-        String Mes = TxtMes.getText();
-        if(Mes.equalsIgnoreCase("02")){
-          JOptionPane.showMessageDialog(this, "Para el mes de Febrero puedes digitar hasta el 28",
-                  "FEBRERO", JOptionPane.ERROR_MESSAGE);
-        }
+        
+        
+        
+       
     }//GEN-LAST:event_TxtMesKeyPressed
+
+    private void TxtAnioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtAnioKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TxtAnioKeyPressed
 
  
 
@@ -294,6 +374,7 @@ public boolean isNumero (String numero){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnMostrar;
+    private javax.swing.JComboBox<String> CmbUno;
     private javax.swing.JLabel LblAnio;
     private javax.swing.JLabel LblDescripcion;
     private javax.swing.JLabel LblDia;

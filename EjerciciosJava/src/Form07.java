@@ -58,22 +58,30 @@ public class Form07 extends javax.swing.JFrame {
 
         LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblResultado.setText("<html><center>Resultado</center>");
+        LblResultado.setOpaque(true);
         getContentPane().add(LblResultado);
-        LblResultado.setBounds(30, 410, 130, 40);
+        LblResultado.setBounds(20, 300, 130, 40);
 
         TxtCatetoDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        TxtCatetoDos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtCatetoDosActionPerformed(evt);
+            }
+        });
         getContentPane().add(TxtCatetoDos);
-        TxtCatetoDos.setBounds(20, 270, 120, 40);
+        TxtCatetoDos.setBounds(150, 220, 120, 40);
 
         LblCatetoDos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblCatetoDos.setText("<html><center>Cateto dos</center>");
+        LblCatetoDos.setOpaque(true);
         getContentPane().add(LblCatetoDos);
-        LblCatetoDos.setBounds(10, 220, 210, 40);
+        LblCatetoDos.setBounds(10, 220, 120, 40);
 
         LblTitulo.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         LblTitulo.setText("<html><center>Calcular la hipotenusa<center>");
+        LblTitulo.setOpaque(true);
         getContentPane().add(LblTitulo);
-        LblTitulo.setBounds(90, 10, 140, 70);
+        LblTitulo.setBounds(150, 10, 140, 80);
 
         BtnCalcular.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         BtnCalcular.setText("<html><center>Calcular</center>");
@@ -83,16 +91,17 @@ public class Form07 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnCalcular);
-        BtnCalcular.setBounds(220, 330, 110, 40);
+        BtnCalcular.setBounds(310, 140, 150, 80);
 
         TxtCatetoUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         getContentPane().add(TxtCatetoUno);
-        TxtCatetoUno.setBounds(20, 160, 120, 40);
+        TxtCatetoUno.setBounds(150, 110, 120, 40);
 
         LblCatetoUno.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         LblCatetoUno.setText("<html><center>Cateto uno:</center>");
+        LblCatetoUno.setOpaque(true);
         getContentPane().add(LblCatetoUno);
-        LblCatetoUno.setBounds(10, 110, 220, 40);
+        LblCatetoUno.setBounds(10, 110, 120, 40);
 
         TxtResultado.setColumns(20);
         TxtResultado.setFont(new java.awt.Font("Century Gothic", 3, 14)); // NOI18N
@@ -100,11 +109,11 @@ public class Form07 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(TxtResultado);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 470, 320, 150);
+        jScrollPane1.setBounds(30, 360, 430, 100);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/baymax.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Comp.gif"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 350, 623);
+        jLabel1.setBounds(0, 0, 480, 480);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -206,6 +215,10 @@ public class Form07 extends javax.swing.JFrame {
           TxtResultado.setText("La hipotenusa es :" +resultado); 
           }
     }//GEN-LAST:event_BtnCalcularActionPerformed
+
+    private void TxtCatetoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCatetoDosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtCatetoDosActionPerformed
 
     /**
      * @param args the command line arguments
