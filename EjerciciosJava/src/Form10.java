@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -26,6 +29,14 @@ public class Form10 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        LblDescripcion = new javax.swing.JLabel();
+        LblSegundos = new javax.swing.JLabel();
+        TxtSegundos = new javax.swing.JTextField();
+        BtnMostrar = new javax.swing.JButton();
+        LblResultado = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtConversion = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -43,16 +54,52 @@ public class Form10 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 362, Short.MAX_VALUE)
-        );
+        jPanel1.setLayout(null);
+
+        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblDescripcion.setText("<html><center>Convertir segundos</center>");
+        LblDescripcion.setOpaque(true);
+        jPanel1.add(LblDescripcion);
+        LblDescripcion.setBounds(150, 0, 220, 40);
+
+        LblSegundos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblSegundos.setText("<html><center>Digita los segundos</center>");
+        LblSegundos.setOpaque(true);
+        jPanel1.add(LblSegundos);
+        LblSegundos.setBounds(20, 80, 220, 40);
+
+        TxtSegundos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        jPanel1.add(TxtSegundos);
+        TxtSegundos.setBounds(30, 140, 120, 30);
+
+        BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        BtnMostrar.setText("<html><center>Mostrar</center>");
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnMostrar);
+        BtnMostrar.setBounds(280, 140, 103, 50);
+
+        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblResultado.setText("Resultado");
+        LblResultado.setOpaque(true);
+        jPanel1.add(LblResultado);
+        LblResultado.setBounds(40, 220, 150, 40);
+
+        TxtConversion.setColumns(20);
+        TxtConversion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        TxtConversion.setRows(5);
+        jScrollPane1.setViewportView(TxtConversion);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(30, 266, 360, 100);
+
+        jLabel1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 500, 375);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -135,6 +182,22 @@ public class Form10 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+        // TODO add your handling code here:
+        int seg = Integer.parseInt(TxtSegundos.getText());
+        int HoraF = 0, MinutoF=0, Seg=0;
+        
+        if(seg>0){
+            MinutoF= seg/60;
+        HoraF= seg/3600;
+        Seg= seg;
+        TxtConversion.setText(HoraF+"Hrs"+MinutoF+"mins"+Seg+"Sgs");
+        }else{
+            JOptionPane.showMessageDialog(this, "No puedes digitar números negativos",
+                    "Digita bien por favor", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -171,6 +234,12 @@ public class Form10 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMostrar;
+    private javax.swing.JLabel LblDescripcion;
+    private javax.swing.JLabel LblResultado;
+    private javax.swing.JLabel LblSegundos;
+    private javax.swing.JTextArea TxtConversion;
+    private javax.swing.JTextField TxtSegundos;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -180,7 +249,9 @@ public class Form10 extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
