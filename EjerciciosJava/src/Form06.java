@@ -217,11 +217,26 @@ public boolean isNumero (String numero){
        int num2=Integer.parseInt(TxtNumeroDos.getText());
        int num3= Integer.parseInt(TxtNumeroTres.getText());
         
-       if((num1<=0)||(num2<=0)||(num3<=0)){
-           JOptionPane.showMessageDialog(this, "ERROR", "No permitido", JOptionPane.ERROR_MESSAGE);
+       
+       //Numeros iguales
+       if (num1==num2 && num1==num3 ) {
+           JOptionPane.showMessageDialog(this, "Números iguales",
+                   "IGUALES", JOptionPane.ERROR_MESSAGE);
        }
-       //Encontrar que número es el mayor, del medio y el menor 
-       if((num1>num2)&&(num1>num3)){
+       if (num1==num3) {
+        JOptionPane.showMessageDialog(this, "Números iguales",
+                   "IGUALES", JOptionPane.ERROR_MESSAGE);
+       }else if(num1==num2){
+           JOptionPane.showMessageDialog(this, "Números iguales"
+                   ,"No válido", JOptionPane.ERROR_MESSAGE);
+       }
+       if(num2==num3){
+           JOptionPane.showMessageDialog(this, "Números iguales",
+                   "No válido", JOptionPane.ERROR_MESSAGE);
+       }
+       
+      if(num1>0 && num2>00 && num3>0){
+          if((num1>num2)&&(num1>num3)){
             mayor = num1;
             medio = Math.max(num2, num3);
             menor = Math.min(num2, num3); 
@@ -236,6 +251,11 @@ public boolean isNumero (String numero){
        }
        //Mostrar resultado
        TxtResultado.setText(mayor+"El número es el mayor \n"+medio+"El número es el del medio \n"+menor+"El numero es el menor");
+       
+      }else{
+          JOptionPane.showMessageDialog(this, "Números negativos",
+                   "No válido", JOptionPane.ERROR_MESSAGE);
+      }
        
     
          

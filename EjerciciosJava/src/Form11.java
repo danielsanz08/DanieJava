@@ -8,14 +8,14 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Daniel
+ * @author DELL
  */
-public class Form09 extends javax.swing.JFrame {
+public class Form11 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form09
+     * Creates new form Form11
      */
-    public Form09() {
+    public Form11() {
         initComponents();
     }
 
@@ -28,11 +28,13 @@ public class Form09 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LblDescripcion = new javax.swing.JLabel();
-        LblFecha = new javax.swing.JLabel();
-        TxtMesNumero = new javax.swing.JTextField();
-        BtnMostrar = new javax.swing.JButton();
-        TxtMesLetra = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        LblNumero = new javax.swing.JLabel();
+        TxtNumero = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        LblResultado = new javax.swing.JLabel();
+        TxtResultado = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -50,45 +52,47 @@ public class Form09 extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        LblDescripcion.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblDescripcion.setText("<html><center>Mostrar el mes</center>\n");
-        LblDescripcion.setOpaque(true);
-        getContentPane().add(LblDescripcion);
-        LblDescripcion.setBounds(130, 10, 220, 40);
+        jPanel1.setLayout(null);
 
-        LblFecha.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblFecha.setText("<html><center>Digite un numero del 01 al 12</center>");
-        LblFecha.setOpaque(true);
-        getContentPane().add(LblFecha);
-        LblFecha.setBounds(30, 110, 380, 50);
+        LblNumero.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        LblNumero.setText("Digite un numero ");
+        LblNumero.setOpaque(true);
+        jPanel1.add(LblNumero);
+        LblNumero.setBounds(160, 110, 170, 40);
 
-        TxtMesNumero.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        getContentPane().add(TxtMesNumero);
-        TxtMesNumero.setBounds(140, 180, 140, 50);
+        TxtNumero.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jPanel1.add(TxtNumero);
+        TxtNumero.setBounds(180, 180, 130, 50);
 
-        BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        BtnMostrar.setText("<html><center>Mostrar</center>");
-        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jLabel3.setText("<html><center>Número en <br>orden inverso</center>");
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(160, 20, 180, 70);
+
+        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        LblResultado.setText("<html><center>Resultado</center>");
+        LblResultado.setOpaque(true);
+        jPanel1.add(LblResultado);
+        LblResultado.setBounds(190, 340, 140, 40);
+
+        TxtResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jPanel1.add(TxtResultado);
+        TxtResultado.setBounds(10, 400, 430, 50);
+
+        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jButton1.setText("<html><center>Mostrar</center>");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnMostrarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnMostrar);
-        BtnMostrar.setBounds(160, 270, 120, 70);
+        jPanel1.add(jButton1);
+        jButton1.setBounds(180, 270, 140, 40);
 
-        TxtMesLetra.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        TxtMesLetra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtMesLetraActionPerformed(evt);
-            }
-        });
-        getContentPane().add(TxtMesLetra);
-        TxtMesLetra.setBounds(130, 380, 170, 60);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jun.gif"))); // NOI18N
-        getContentPane().add(jLabel1);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 480, 480);
 
         fileMenu.setMnemonic('f');
@@ -154,84 +158,59 @@ public class Form09 extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+        );
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
-    private void TxtMesLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtMesLetraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtMesLetraActionPerformed
 
-    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        int Numero= Integer.parseInt(TxtNumero.getText());
         
-        String Mes = TxtMesNumero.getText();
-        String mes = (String)TxtMesNumero.getText();
-        int meses= Integer.parseInt(TxtMesNumero.getText());
+        if(Numero<=0){
+            JOptionPane.showMessageDialog(this, "No se aceptan numeros negativos",
+                "No válido", JOptionPane.ERROR_MESSAGE);
+        }
+        if(Numero>=100 && Numero<999){
+        int digito1= Numero % 10;
+        int digito2 = (Numero/10)%10;
+        int digito3 = Numero/100;
+        TxtResultado.setText(digito1+","+digito2+","+digito3);
+    }
         
-            if(meses>=01 && meses<=12){
-            if(mes.length()==2){
-         if(mes.equals("01")){
-             TxtMesLetra.setText("Enero");
-         }else if(mes.equals("02")){
-             TxtMesLetra.setText("Febrero");
-         }         
-         if(mes.equals("03")){
-            TxtMesLetra.setText("Marzo");
-        }else if(mes.equals("04")){
-            TxtMesLetra.setText("Abril");
-        }
-        if(mes.equals("05")){
-            TxtMesLetra.setText("Mayo");
-        }else if(mes.equals("06")){
-            TxtMesLetra.setText("Junio");
-        }
-        if(mes.equals("07")){
-            TxtMesLetra.setText("Julio");
-        }else if(mes.equals("08")){
-            TxtMesLetra.setText("Agosto");
-        }
-        if(mes.equals("09")){
-            TxtMesLetra.setText("Septiembre");
-        }else if(mes.equals("10")){
-            TxtMesLetra.setText("Octubre");
-        }
-        if(mes.equals("11")){
-            TxtMesLetra.setText("Noviembre");
-        }else if(mes.equals("12")){
-            TxtMesLetra.setText("Diciembre");
-        }
-        }else if(mes.length()>2){
-            JOptionPane.showMessageDialog(this, "Sólo se aceptan números del 1 al 12",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        if(Numero>=10 && Numero<=99){
+        int digito1= Numero % 10;
+        int digito2 = (Numero/10)%10;
+        int digito3 = Numero/100;
+        TxtResultado.setText(digito1+","+digito2);
+    }
+     
+        if (Numero<10){
             
-            
-        
-            
-        }else{
-            JOptionPane.showMessageDialog(this, "¡Números negativos! Digita números entre el 01 y 12",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, "No se aceptan menores de 2 digitos",
+                "No válido", JOptionPane.ERROR_MESSAGE);
+    }
+        String num= TxtNumero.getText();
+        if(num.length()>=3){
+            JOptionPane.showMessageDialog(this, "No se aceptan mayores de 3 digitos",
+                "No válido", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
-        
-        
-    }//GEN-LAST:event_BtnMostrarActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,30 +229,29 @@ public boolean isNumero (String numero){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form09().setVisible(true);
+                new Form11().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnMostrar;
-    private javax.swing.JLabel LblDescripcion;
-    private javax.swing.JLabel LblFecha;
-    private javax.swing.JTextField TxtMesLetra;
-    private javax.swing.JTextField TxtMesNumero;
+    private javax.swing.JLabel LblNumero;
+    private javax.swing.JLabel LblResultado;
+    private javax.swing.JTextField TxtNumero;
+    private javax.swing.JTextField TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -283,7 +261,10 @@ public boolean isNumero (String numero){
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

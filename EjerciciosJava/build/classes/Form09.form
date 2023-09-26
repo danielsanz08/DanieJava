@@ -139,7 +139,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Schoolbook" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Digite un numero del 1 al 2&lt;/center&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Digite un numero del 01 al 12&lt;/center&gt;"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <Constraints>
