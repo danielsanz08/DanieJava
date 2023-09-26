@@ -1,6 +1,3 @@
-
-import javax.swing.JOptionPane;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -10,12 +7,12 @@ import javax.swing.JOptionPane;
  *
  * @author DELL
  */
-public class Form11 extends javax.swing.JFrame {
+public class Frm12 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Form11
+     * Creates new form Frm12
      */
-    public Form11() {
+    public Frm12() {
         initComponents();
     }
 
@@ -29,12 +26,12 @@ public class Form11 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         LblNumero = new javax.swing.JLabel();
         TxtNumero = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        LblResultado = new javax.swing.JLabel();
-        TxtResultado = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        BtnVerificar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -55,43 +52,44 @@ public class Form11 extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
+        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jLabel2.setText("<html><center>Número capicúa</center>");
+        jLabel2.setOpaque(true);
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(130, 10, 210, 40);
+
         LblNumero.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        LblNumero.setText("Digite un numero ");
+        LblNumero.setText("<html><center>Digite un número</center>");
         LblNumero.setOpaque(true);
         jPanel1.add(LblNumero);
-        LblNumero.setBounds(160, 110, 170, 40);
+        LblNumero.setBounds(150, 80, 160, 40);
 
         TxtNumero.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jPanel1.add(TxtNumero);
-        TxtNumero.setBounds(180, 180, 130, 50);
+        TxtNumero.setBounds(170, 140, 120, 50);
 
-        jLabel3.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        jLabel3.setText("<html><center>Número en <br>orden inverso</center>");
-        jLabel3.setOpaque(true);
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(160, 20, 180, 70);
-
-        LblResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        LblResultado.setText("<html><center>Resultado</center>");
-        LblResultado.setOpaque(true);
-        jPanel1.add(LblResultado);
-        LblResultado.setBounds(190, 340, 140, 40);
-
-        TxtResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        jPanel1.add(TxtResultado);
-        TxtResultado.setBounds(100, 400, 320, 50);
-
-        jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        jButton1.setText("<html><center>Mostrar</center>");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnVerificar.setBackground(new java.awt.Color(255, 51, 51));
+        BtnVerificar.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        BtnVerificar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnVerificar.setText("<html><center>Verificar<Center>");
+        BtnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnVerificarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(180, 270, 140, 40);
+        jPanel1.add(BtnVerificar);
+        BtnVerificar.setBounds(170, 250, 130, 30);
+
+        TxtResultado.setColumns(20);
+        TxtResultado.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
+        TxtResultado.setRows(5);
+        jScrollPane1.setViewportView(TxtResultado);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(60, 320, 354, 121);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 480, 480);
 
@@ -162,13 +160,11 @@ public class Form11 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
         );
 
         pack();
@@ -178,39 +174,18 @@ public class Form11 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerificarActionPerformed
         // TODO add your handling code here:
-        int Numero= Integer.parseInt(TxtNumero.getText());
-        
-        if(Numero<=0){
-            JOptionPane.showMessageDialog(this, "No se aceptan numeros negativos",
-                "No válido", JOptionPane.ERROR_MESSAGE);
+        int num=Integer.parseInt(TxtNumero.getText());
+        if(num%2==0){
+            TxtResultado.setText(num+"Es numero es par");
+        }else{
+            TxtResultado.setText(num+"Es numero es impar");
         }
-        if(Numero>=100 && Numero<999){
-        int digito1= Numero % 10;
-        int digito2 = (Numero/10)%10;
-        int digito3 = Numero/100;
-        TxtResultado.setText(digito1+","+digito2+","+digito3);
-    }
-        
-        if(Numero>=10 && Numero<=99){
-        int digito1= Numero % 10;
-        int digito2 = (Numero/10)%10;
-        int digito3 = Numero/100;
-        TxtResultado.setText(digito1+","+digito2);
-    }
-     
-        if (Numero<10){
+        if(){
             
-        JOptionPane.showMessageDialog(this, "No se aceptan menores de 2 digitos",
-                "No válido", JOptionPane.ERROR_MESSAGE);
-    }
-        String num= TxtNumero.getText();
-        if(num.length()>=3){
-            JOptionPane.showMessageDialog(this, "No se aceptan mayores de 3 digitos",
-                "No válido", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnVerificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,29 +204,29 @@ public class Form11 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Form11.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frm12.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Form11().setVisible(true);
+                new Frm12().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnVerificar;
     private javax.swing.JLabel LblNumero;
-    private javax.swing.JLabel LblResultado;
     private javax.swing.JTextField TxtNumero;
-    private javax.swing.JTextField TxtResultado;
+    private javax.swing.JTextArea TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -261,10 +236,10 @@ public class Form11 extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
