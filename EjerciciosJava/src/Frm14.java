@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -32,6 +35,7 @@ public class Frm14 extends javax.swing.JFrame {
         TxtCaracter = new javax.swing.JTextField();
         Txtresultado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -55,7 +59,7 @@ public class Frm14 extends javax.swing.JFrame {
         jLabel3.setText("<html><center>Cadenas polindromanas</center> ");
         jLabel3.setOpaque(true);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 30, 250, 60);
+        jLabel3.setBounds(110, 30, 250, 60);
 
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jLabel2.setText("<html><center>Digite el caracter</center>");
@@ -68,6 +72,11 @@ public class Frm14 extends javax.swing.JFrame {
         BtnMostrar.setForeground(new java.awt.Color(255, 255, 255));
         BtnMostrar.setText("<html><center>Mostrar</center>\n");
         BtnMostrar.setOpaque(true);
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMostrar);
         BtnMostrar.setBounds(330, 260, 120, 60);
 
@@ -77,12 +86,16 @@ public class Frm14 extends javax.swing.JFrame {
 
         Txtresultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jPanel1.add(Txtresultado);
-        Txtresultado.setBounds(40, 330, 280, 90);
+        Txtresultado.setBounds(40, 330, 420, 140);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(51, 51, 255));
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(0, 0, 0, 0);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(0, 0, 480, 480);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -151,11 +164,11 @@ public class Frm14 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
         );
 
         pack();
@@ -165,6 +178,49 @@ public class Frm14 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+        // TODO add your handling code here:
+        mostrarPalindroma();
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
+    
+
+    public static boolean mostrarPalindroma(String input) {
+
+        input = input.replaceAll("\\s+", "").toLowerCase();
+        int car1 = 0;
+        int car2 = input.length() - 1;
+        while (car1 < car2) {
+            if (input.charAt(car1) != input.charAt(car2)) {
+                return false;
+            }
+            car1++;
+            car2--;
+        }
+        return true;
+    }
+    public void mostrarPalindroma() {
+
+        String input = TxtCaracter.getText();
+        if (mostrarPalindroma(input)) {
+            Txtresultado.setText("La palabra es\n un palíndromo.");
+        } else {
+            Txtresultado.setText("La palabra no es\n un palindromo");
+        }
+      
+    }
     /**
      * @param args the command line arguments
      */
@@ -216,6 +272,7 @@ public class Frm14 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;

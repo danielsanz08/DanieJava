@@ -178,6 +178,18 @@ public class Form11 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int Numero= Integer.parseInt(TxtNumero.getText());

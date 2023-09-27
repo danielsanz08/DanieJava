@@ -97,9 +97,9 @@ public class Form10 extends javax.swing.JFrame {
         jScrollPane1.setBounds(30, 266, 360, 100);
 
         jLabel1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 500, 375);
+        jLabel1.setBounds(0, 0, 720, 1295);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -182,6 +182,18 @@ public class Form10 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
         int seg = Integer.parseInt(TxtSegundos.getText());

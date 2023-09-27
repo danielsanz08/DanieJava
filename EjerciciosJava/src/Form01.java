@@ -108,7 +108,7 @@ public class Form01 extends javax.swing.JFrame {
         getContentPane().add(BtnCalcular);
         BtnCalcular.setBounds(220, 280, 110, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 350, 480);
 
@@ -200,7 +200,7 @@ public boolean Numero (String numero){
         DecimalFormat df = new DecimalFormat("0.00");
         TxtResultado.setVisible(false);
         if(TxtNumeroDos.getText().equalsIgnoreCase("0")){
-            JOptionPane.showMessageDialog(this, "El o no está permitido como segundo numero", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El 0 no está permitido como segundo numero", "Error", JOptionPane.ERROR_MESSAGE);
             TxtNumeroDos.setText("");
             
         }else{

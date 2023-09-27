@@ -98,7 +98,7 @@ public class Form04 extends javax.swing.JFrame {
         getContentPane().add(LblDescripcion);
         LblDescripcion.setBounds(140, 10, 200, 80);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 500, 370);
 

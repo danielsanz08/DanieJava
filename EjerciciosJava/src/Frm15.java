@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -29,7 +32,7 @@ public class Frm15 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         BtnMostrar = new javax.swing.JButton();
-        TxtCaracter = new javax.swing.JTextField();
+        TxtNumero = new javax.swing.JTextField();
         Txtresultado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
@@ -58,31 +61,36 @@ public class Frm15 extends javax.swing.JFrame {
         jLabel3.setBounds(100, 30, 200, 60);
 
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        jLabel2.setText("<html><center>Digite el número</center>");
+        jLabel2.setText("<html><center>Digite un número del 1 al 99</center>");
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 130, 230, 60);
+        jLabel2.setBounds(20, 130, 320, 60);
 
         BtnMostrar.setBackground(new java.awt.Color(255, 0, 0));
         BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         BtnMostrar.setForeground(new java.awt.Color(255, 255, 255));
         BtnMostrar.setText("<html><center>Mostrar</center>\n");
         BtnMostrar.setOpaque(true);
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMostrar);
         BtnMostrar.setBounds(220, 230, 120, 60);
 
-        TxtCaracter.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jPanel1.add(TxtCaracter);
-        TxtCaracter.setBounds(40, 220, 150, 50);
+        TxtNumero.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jPanel1.add(TxtNumero);
+        TxtNumero.setBounds(40, 220, 150, 50);
 
         Txtresultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jPanel1.add(Txtresultado);
         Txtresultado.setBounds(40, 330, 280, 90);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(0, 0, 720, 1295);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -165,6 +173,61 @@ public class Frm15 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
+    public void ConvertirNumeroEscrito(){
+        int num=Integer.parseInt(TxtNumero.getText());
+       if(num<0 || num>99){
+           JOptionPane.showMessageDialog(this, "El número ingresado no es valido",
+                   "No válido", JOptionPane.ERROR_MESSAGE);
+       }else{
+           String[]unidades= {"cero","Uno","Dos","Tres","Cuatro","quinto"+"Sexto"+"Séptimo"+"Octavo"+"Noveno"};
+           String [] decenas= {"", "", "Veinte","Treinta","Cuarenta","Cincuenta","Sesenta","Setenta","Ochenta","Noventa"};
+           String[] especiales= {"Diez", "Once","Doce","Trece","Catorce","Quince","Dieciseis","Diecisiete","Dieciocho","Diecinueve"};
+           if(num<10){
+               Txtresultado.setText("El numero es "+unidades[num]);
+           }else if(num<20){
+               
+               Txtresultado.setText("El numero es "+especiales[num - 10]);
+           }else{
+               int unidad= num%10;
+               int decena = num/10;
+               if(unidad==0){
+                   Txtresultado.setText("El numero es "+decenas[decena]);
+               }else{
+                   Txtresultado.setText("El numero es "+decenas[decena]+ unidades[unidad]);
+               }
+           }
+       }
+    }
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+        // TODO add your handling code here:
+        int numero= Integer.parseInt(TxtNumero.getText());
+        if(numero<0){
+            JOptionPane.showMessageDialog(this, "El número ingresado es negativo",
+                    "NO PERMITIDO", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        if(numero<0 || numero>99){
+            JOptionPane.showMessageDialog(this, "El número ingresado está fuera del rango permitido",
+                    "NO PERMITIDO", JOptionPane.ERROR_MESSAGE);
+        }else{
+            String numeroEscrito = convertirNumeroEscrito(numero);
+            Txtresultado.setText("Se escribe" +" "+ numeroEscrito);
+        }
+       
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,7 +265,7 @@ public class Frm15 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnMostrar;
-    private javax.swing.JTextField TxtCaracter;
+    private javax.swing.JTextField TxtNumero;
     private javax.swing.JTextField Txtresultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
@@ -223,5 +286,9 @@ public class Frm15 extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
+
+    private String convertirNumeroEscrito(int num) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
 }

@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -88,10 +91,9 @@ public class Frm12 extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(60, 320, 354, 121);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
-        jLabel1.setOpaque(true);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(10, 0, 460, 470);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -174,17 +176,46 @@ public class Frm12 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
     private void BtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerificarActionPerformed
         // TODO add your handling code here:
         int num=Integer.parseInt(TxtNumero.getText());
-        if(num%2==0){
-            TxtResultado.setText(num+"Es numero es par");
-        }else{
-            TxtResultado.setText(num+"Es numero es impar");
+        String capicua=TxtResultado.getText();
+        String Par= TxtResultado.getText();
+        int inv=0;
+        int aux=num;
+        
+        while(aux>0){
+           int  digito=aux%10;
+           inv=inv*10+digito;
+           aux=aux/10;
         }
-        if(){
+        if(num==inv && num%2==0){
             
+            TxtResultado.setText(num+" "+"Es un numero capicua\n y numero par");
         }
+        if(num==inv && num%2 !=0){
+            TxtResultado.setText(num+" "+"Es un numero capicua \n y el numero es impar");
+        }
+        if(num!=inv && num%2==0){
+            TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero par");
+        }
+        if(num!=inv && num%2!=0){
+            TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero impar");
+        }
+        
+        
     }//GEN-LAST:event_BtnVerificarActionPerformed
 
     /**

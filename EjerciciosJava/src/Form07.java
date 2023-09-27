@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import javax.swing.JOptionPane;
 
 /*
@@ -111,9 +112,9 @@ public class Form07 extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(30, 360, 430, 100);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Comp.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(0, 0, 720, 1295);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -184,7 +185,7 @@ public class Form07 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-      public boolean isNumero (String numero){
+  public boolean isNumero (String numero){
       try{
           int Number = Integer.parseInt(numero);
           return true;
@@ -196,23 +197,23 @@ public class Form07 extends javax.swing.JFrame {
         return false;
       }
     }
-      
-    
     private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
-        // TODO add your handling code here:
         float cUno=0;
          float cDos=0;
          double resultado = 0;
          
           cUno = Float.parseFloat(TxtCatetoUno.getText());
           cDos = Float.parseFloat(TxtCatetoDos.getText());
-          if((cUno<=0) ||(cDos<=0)){
+          
+              if(isNumero(TxtCatetoUno.getText())&& isNumero(TxtCatetoDos.getText())){
+                  if((cUno<=0) ||(cDos<=0)){
               JOptionPane.showMessageDialog(this, "ERROR",
                       "No permitido", JOptionPane.ERROR_MESSAGE);
           }else{
           resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
           
           TxtResultado.setText("La hipotenusa es :" +resultado); 
+          }
           }
     }//GEN-LAST:event_BtnCalcularActionPerformed
 

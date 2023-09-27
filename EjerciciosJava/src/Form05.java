@@ -184,7 +184,7 @@ public class Form05 extends javax.swing.JFrame {
         jPanel1.add(TxtResultadoF);
         TxtResultadoF.setBounds(80, 270, 300, 90);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bob esponja.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 500, 380);
 

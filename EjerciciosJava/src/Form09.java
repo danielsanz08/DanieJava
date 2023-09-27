@@ -87,9 +87,9 @@ public class Form09 extends javax.swing.JFrame {
         getContentPane().add(TxtMesLetra);
         TxtMesLetra.setBounds(130, 380, 170, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jun.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(0, 0, 720, 1295);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

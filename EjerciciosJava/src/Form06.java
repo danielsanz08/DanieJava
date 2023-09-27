@@ -1,4 +1,5 @@
 
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
@@ -203,13 +204,19 @@ public boolean isNumero (String numero){
       
         return false;
       }
+      }
+
       
-    }
+    
 
      
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int mayor=0;
+        
+      
+       
+       
+           int mayor=0;
         int menor=0;
         int medio=0;
       
@@ -217,9 +224,7 @@ public boolean isNumero (String numero){
        int num2=Integer.parseInt(TxtNumeroDos.getText());
        int num3= Integer.parseInt(TxtNumeroTres.getText());
         
-       
-       //Numeros iguales
-       if (num1==num2 && num1==num3 ) {
+         if (num1==num2 && num1==num3 ) {
            JOptionPane.showMessageDialog(this, "Números iguales",
                    "IGUALES", JOptionPane.ERROR_MESSAGE);
        }
@@ -234,7 +239,6 @@ public boolean isNumero (String numero){
            JOptionPane.showMessageDialog(this, "Números iguales",
                    "No válido", JOptionPane.ERROR_MESSAGE);
        }
-       
       if(num1>0 && num2>00 && num3>0){
           if((num1>num2)&&(num1>num3)){
             mayor = num1;
@@ -256,6 +260,7 @@ public boolean isNumero (String numero){
           JOptionPane.showMessageDialog(this, "Números negativos",
                    "No válido", JOptionPane.ERROR_MESSAGE);
       }
+       
        
     
          

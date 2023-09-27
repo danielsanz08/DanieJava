@@ -306,7 +306,7 @@
               <Font name="Century Gothic" size="18" style="3"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/arc.gif"/>
+              <Image iconType="3" name="/mario.jpg"/>
             </Property>
           </Properties>
           <Constraints>

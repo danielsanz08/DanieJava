@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -69,6 +72,11 @@ public class Frm16 extends javax.swing.JFrame {
         BtnMostrar.setForeground(new java.awt.Color(255, 255, 255));
         BtnMostrar.setText("<html><center>Mostrar</center>\n");
         BtnMostrar.setOpaque(true);
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMostrar);
         BtnMostrar.setBounds(340, 200, 120, 60);
 
@@ -169,6 +177,44 @@ public class Frm16 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    public boolean Numero (String numero){
+      try{
+          int Number = Integer.parseInt(numero);
+          return true;
+      } catch(NumberFormatException NFE){
+         JOptionPane.showMessageDialog(this, 
+                    "El texto "+numero +" no es un número valido", 
+                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+      
+        return false;
+      }
+    }
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+        // TODO add your handling code here:
+        String frase = TxtCaracter.getText();
+       
+        // Dividir la frase en palabras
+        String[] palabras = frase.split(" ");
+        
+        if (palabras.length < 5) {
+            JOptionPane.showMessageDialog(this, "La frase debe contener al menos 5 palabras",
+                    "NO valido", JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Capitalizar la primera letra de cada palabra
+            StringBuilder fraseCapitalizada = new StringBuilder();
+            for (String palabra : palabras) {
+                // Asegurarse de que la palabra no esté vacía
+                if (!palabra.isEmpty()) {
+                    fraseCapitalizada.append(Character.toUpperCase(palabra.charAt(0)));
+                    fraseCapitalizada.append(palabra.substring(1).toLowerCase());
+                    fraseCapitalizada.append(" ");
+                }
+            }
+            
+            Txtresultado.setText("Frase capitalizada"+fraseCapitalizada);
+        }
+    }//GEN-LAST:event_BtnMostrarActionPerformed
 
     /**
      * @param args the command line arguments

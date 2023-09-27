@@ -142,9 +142,9 @@ public class Form08 extends javax.swing.JFrame {
         CmbUno.setBounds(290, 120, 160, 40);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 3, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/arc.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 490);
+        jLabel1.setBounds(0, 0, 720, 490);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -241,9 +241,7 @@ public boolean isNumero (String numero){
  
       
     }
-     public void MostrarFecha(){
-         
-     }
+    
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
        

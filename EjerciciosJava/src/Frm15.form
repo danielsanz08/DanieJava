@@ -153,12 +153,12 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Century Schoolbook" size="24" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Digite el n&#xfa;mero&lt;/center&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Digite un n&#xfa;mero del 1 al 99&lt;/center&gt;"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="130" width="230" height="60"/>
+              <AbsoluteConstraints x="20" y="130" width="320" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -176,13 +176,16 @@
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Mostrar&lt;/center&gt;&#xa;"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMostrarActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="220" y="230" width="120" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="TxtCaracter">
+        <Component class="javax.swing.JTextField" name="TxtNumero">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="3"/>
@@ -209,7 +212,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/giphy.gif"/>
+              <Image iconType="3" name="/mario.jpg"/>
             </Property>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
