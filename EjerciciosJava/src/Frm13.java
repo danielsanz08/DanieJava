@@ -75,12 +75,17 @@ public class Frm13 extends javax.swing.JFrame {
         BtnMostrar.setForeground(new java.awt.Color(255, 255, 255));
         BtnMostrar.setText("<html><center>Mostrar</center>\n");
         BtnMostrar.setOpaque(true);
+        BtnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnMostrar);
         BtnMostrar.setBounds(330, 260, 120, 60);
 
         Txtresultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jPanel1.add(Txtresultado);
-        Txtresultado.setBounds(40, 330, 160, 90);
+        Txtresultado.setBounds(40, 330, 410, 130);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -168,19 +173,25 @@ public class Frm13 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-
-    public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
+private int contarOcurrencias(String texto, String palabra) {
+         int contador=0;
+         int indice = texto.indexOf(palabra);
+         while(indice != 1){
+             contador++;
+             indice = texto.indexOf(palabra, indice+1);
+         }
+         return contador;
     }
+
+    private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
+        // TODO add your handling code here:
+        String texto = TxtCaracter.getText().toLowerCase();
+        String palabraAContar = TxtCaracter.getText();
+        int contador = contarOcurrencias(texto,palabraAContar);
+        Txtresultado.setText("la palabra"+" "+ palabraAContar+ "Aparece"+contador+"veces en la cadena");
+    }//GEN-LAST:event_BtnMostrarActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -240,4 +251,5 @@ public class Frm13 extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
+    
 }

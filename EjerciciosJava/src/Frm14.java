@@ -205,9 +205,9 @@ public class Frm14 extends javax.swing.JFrame {
         while (car1 < car2) {
             if (input.charAt(car1) != input.charAt(car2)) {
                 return false;
-            }
-            car1++;
-            car2--;
+             }
+              car1++;
+              car2--;
         }
         return true;
     }

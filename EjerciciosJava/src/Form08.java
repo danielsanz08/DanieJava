@@ -226,30 +226,17 @@ public class Form08 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-      
- 
-      
-    }
+
     
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
        
-        JComboBox<String> OpAnio = CmbUno;
+    try{
+         JComboBox<String> OpAnio = CmbUno;
          String AnioSeleccionado = (String) CmbUno.getSelectedItem();
          
          //Uso de la sentencia if
-         if(AnioSeleccionado.equals("Año Normal")){
+        if(AnioSeleccionado.equals("Año Normal")){
              String Anio = TxtAnio.getText();
             if(Anio.length()<4){
                 JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
@@ -259,9 +246,9 @@ public boolean isNumero (String numero){
                         "Año no válido", JOptionPane.ERROR_MESSAGE);
             }
             
-             int Mes = Integer.parseInt(TxtMes.getText());
-             int Dia = Integer.parseInt(TxtDia.getText());
-             if(Mes<0 || Mes >12){
+            int Mes = Integer.parseInt(TxtMes.getText());
+            int Dia = Integer.parseInt(TxtDia.getText());
+            if(Mes<0 || Mes >12){
                  JOptionPane.showMessageDialog(this, "El mes debe ser entre el numero 1 y numero 12",
                         "Mes no válido", JOptionPane.ERROR_MESSAGE);
                 if(Dia<=0 || Dia>31){
@@ -272,8 +259,8 @@ public boolean isNumero (String numero){
                   TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
              }
              
-             if(Mes==02){
-                 if(Dia<=0 || Dia>28){
+            if(Mes==02){
+                if(Dia<0 || Dia>28){
                      JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 28",
                         "Dia no válido", JOptionPane.ERROR_MESSAGE);
              
@@ -282,25 +269,25 @@ public boolean isNumero (String numero){
                  }
              }
          }
-          if(AnioSeleccionado.equals("Año Biciesto")){
+        if(AnioSeleccionado.equals("Año Biciesto")){
               String Anio = TxtAnio.getText();
-              if(Anio.length()<4){
+            if(Anio.length()<4){
                 JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
                         "Año no válido", JOptionPane.ERROR_MESSAGE);
             }else if(Anio.length()>4){
                 JOptionPane.showMessageDialog(this, "El año debe tener 4 dígitos",
                         "Año no válido", JOptionPane.ERROR_MESSAGE);
             }
-              int Mes = Integer.parseInt(TxtMes.getText());
-             int Dia = Integer.parseInt(TxtDia.getText());
-             if(Mes<0 || Mes >12){
+            int Mes = Integer.parseInt(TxtMes.getText());
+            int Dia = Integer.parseInt(TxtDia.getText());
+            if(Mes<0 || Mes >12){
                  JOptionPane.showMessageDialog(this, "El mes debe ser entre el numero 1 y numero 12",
                         "Mes no válido", JOptionPane.ERROR_MESSAGE);
-                if(Dia<=0 ){
+            if(Dia<0 ){
                  JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 31",
                         "Dia no válido", JOptionPane.ERROR_MESSAGE);
              }
-                if(Dia>31){
+            if(Dia>31){
                     JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 31",
                         "Dia no válido", JOptionPane.ERROR_MESSAGE);
                 }
@@ -308,8 +295,8 @@ public boolean isNumero (String numero){
              }else{
                   TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
              }
-             if(Mes==02){
-                 if(Dia<=0 || Dia>29){
+            if(Mes==02){
+                if(Dia<=0 || Dia>29){
                      JOptionPane.showMessageDialog(this, "Debes digitar entre 01 y 29 teniendo en cuenta que elegiste Año biciesto",
                         "Dia no válido", JOptionPane.ERROR_MESSAGE);
              
@@ -319,32 +306,22 @@ public boolean isNumero (String numero){
              }
           } 
           if(AnioSeleccionado.equals("Seleccione una opción")){
-              int Anio = Integer.parseInt(TxtAnio.getText());
-              int Mes = Integer.parseInt(TxtMes.getText());
-             int Dia = Integer.parseInt(TxtDia.getText());
-              if(Anio>0 ){
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "AÑO NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
-              }else{
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "AÑO NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
-              }
-              if(Mes<0){
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "MES NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
-              }else{
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "MES NO VALIDO", JOptionPane.ERROR_MESSAGE);
-              }
-              if(Dia<0){
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "DIA NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
-              }else{
-                  JOptionPane.showMessageDialog(this, "SELECCIONA PRIMERO EL TIPO DE AÑO",
-                          "DIA NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
-              }
+            int Anio = Integer.parseInt(TxtAnio.getText());
+            int Mes = Integer.parseInt(TxtMes.getText());
+            int Dia = Integer.parseInt(TxtDia.getText());
+            if(Anio<0 || Mes<0 || Dia<0){
+                JOptionPane.showMessageDialog(this, "Selecciona el tipo de año primero",
+                        "Falta", JOptionPane.ERROR_MESSAGE);
+            }
+            if(Anio>0 || Mes>0 || Dia>0){
+                JOptionPane.showMessageDialog(this, "Selecciona el tipo de año primero",
+                        "Falta", JOptionPane.ERROR_MESSAGE);
+            }
           }
-         
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "No se aceptan letras",
+                    "NO LETRAS", JOptionPane.ERROR_MESSAGE);
+        }     
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
     private void TxtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAnioActionPerformed

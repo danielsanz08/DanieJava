@@ -185,36 +185,30 @@ public class Form07 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-  public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
+  
     private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
-        float cUno=0;
-         float cDos=0;
-         double resultado = 0;
+       try{
+            float cUno=0;
+            float cDos=0;
+            double resultado = 0;
          
-          cUno = Float.parseFloat(TxtCatetoUno.getText());
-          cDos = Float.parseFloat(TxtCatetoDos.getText());
+            cUno = Float.parseFloat(TxtCatetoUno.getText());
+            cDos = Float.parseFloat(TxtCatetoDos.getText());
           
-              if(isNumero(TxtCatetoUno.getText())&& isNumero(TxtCatetoDos.getText())){
-                  if((cUno<=0) ||(cDos<=0)){
+            
+            if((cUno<=0) ||(cDos<=0)){
               JOptionPane.showMessageDialog(this, "ERROR",
                       "No permitido", JOptionPane.ERROR_MESSAGE);
           }else{
           resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
           
-          TxtResultado.setText("La hipotenusa es :" +resultado); 
+               TxtResultado.setText("La hipotenusa es :" +resultado); 
           }
-          }
+          }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(this, "No se aceptan letras",
+                   "Movimiento no permitido", JOptionPane.ERROR_MESSAGE);
+       
+}
     }//GEN-LAST:event_BtnCalcularActionPerformed
 
     private void TxtCatetoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCatetoDosActionPerformed

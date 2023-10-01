@@ -171,25 +171,15 @@ public class Form04 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
+
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(Numero(TxtNumeroUno.getText())){
+        try{
             int num = Integer.parseInt(TxtNumeroUno.getText());
             if(num<=0){
-                JOptionPane.showMessageDialog(this, "Error", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "No se aceptan números negativos",
+                        "ERROR", JOptionPane.ERROR_MESSAGE);
             }else{
                 if((num %2 ==0) &&(num % 3 ==0)){
                     TxtResultado.setText("El numero digitado es múltiplo de 2 y 3");
@@ -197,7 +187,11 @@ public boolean Numero (String numero){
                     TxtResultado.setText("El número no es múltiplo de 2 y 3");
                 }
             }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "No se aceptan letras",
+                    "No válido", JOptionPane.ERROR_MESSAGE);
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TxtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtResultadoActionPerformed

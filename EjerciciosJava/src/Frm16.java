@@ -178,18 +178,7 @@ public class Frm16 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
+    
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
         String frase = TxtCaracter.getText();
@@ -209,10 +198,11 @@ public class Frm16 extends javax.swing.JFrame {
                     fraseCapitalizada.append(Character.toUpperCase(palabra.charAt(0)));
                     fraseCapitalizada.append(palabra.substring(1).toLowerCase());
                     fraseCapitalizada.append(" ");
+                    
                 }
             }
             
-            Txtresultado.setText("Frase capitalizada"+fraseCapitalizada);
+             Txtresultado.setText("Frase capitalizada"+fraseCapitalizada);
         }
     }//GEN-LAST:event_BtnMostrarActionPerformed
 

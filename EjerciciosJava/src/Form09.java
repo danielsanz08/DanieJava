@@ -160,37 +160,30 @@ public class Form09 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
+
     private void TxtMesLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtMesLetraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtMesLetraActionPerformed
 
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
-        
-        String Mes = TxtMesNumero.getText();
-        String mes = (String)TxtMesNumero.getText();
+       try{
+            String mes = (String)TxtMesNumero.getText();
         int meses= Integer.parseInt(TxtMesNumero.getText());
+        int Mes = Integer.parseInt(TxtMesNumero.getText());
         
-            if(meses>=01 && meses<=12){
-            if(mes.length()==2){
-         if(mes.equals("01")){
+     if(Mes<0 || mes.length()<2 || mes.length()>2){
+         JOptionPane.showMessageDialog(this, "!Ojo¡ movimiento no válido",
+                 "ERROR", JOptionPane.ERROR_MESSAGE);
+     }else{
+         if(meses>=01 && meses<=12){
+        if(mes.length()==2){
+        if(mes.equals("01")){
              TxtMesLetra.setText("Enero");
          }else if(mes.equals("02")){
              TxtMesLetra.setText("Febrero");
          }         
-         if(mes.equals("03")){
+        if(mes.equals("03")){
             TxtMesLetra.setText("Marzo");
         }else if(mes.equals("04")){
             TxtMesLetra.setText("Abril");
@@ -215,22 +208,21 @@ public boolean isNumero (String numero){
         }else if(mes.equals("12")){
             TxtMesLetra.setText("Diciembre");
         }
-        }else if(mes.length()>2){
-            JOptionPane.showMessageDialog(this, "Sólo se aceptan números del 1 al 12",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-        }
-            
-            
         
-            
         }else{
-            JOptionPane.showMessageDialog(this, "¡Números negativos! Digita números entre el 01 y 12",
-                    "ERROR", JOptionPane.ERROR_MESSAGE);
+         JOptionPane.showMessageDialog(this, "Solo se aceptan numeros entre el 01 y 12",
+                 "ERROR", JOptionPane.ERROR_MESSAGE);
+        
         }
-        
-        
-        
-        
+     }
+     }
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(this, "No se permiten letras",
+                   "NADA DE LETRAS", JOptionPane.ERROR_MESSAGE);
+       }
+     
+     
+     
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
     /**

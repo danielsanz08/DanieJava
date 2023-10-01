@@ -51,7 +51,7 @@ public class Form05 extends javax.swing.JFrame {
         LblDescripcion = new javax.swing.JLabel();
         LblFecha = new javax.swing.JLabel();
         LblResultado = new javax.swing.JLabel();
-        TxtResultadoF = new javax.swing.JTextField();
+        TxtFechaFinal = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -180,9 +180,9 @@ public class Form05 extends javax.swing.JFrame {
         jPanel1.add(LblResultado);
         LblResultado.setBounds(110, 360, 90, 40);
 
-        TxtResultadoF.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
-        jPanel1.add(TxtResultadoF);
-        TxtResultadoF.setBounds(80, 270, 300, 90);
+        TxtFechaFinal.setFont(new java.awt.Font("Century Gothic", 3, 24)); // NOI18N
+        jPanel1.add(TxtFechaFinal);
+        TxtFechaFinal.setBounds(70, 260, 300, 90);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -270,57 +270,48 @@ public class Form05 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-      
-    }
 
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
 
-       String fecha = TxtFecha.getText();
+       try{
+           String fecha = TxtFecha.getText();
+       int number = Integer.parseInt(TxtFecha.getText());
        if(fecha.length()==8){
-           if(isNumero(fecha)){
-           int number = Integer.parseInt(fecha);
            if(number>0){
                int Anio = Integer.parseInt(TxtFecha.getText().substring(0, 4));
                int Mes = Integer.parseInt(TxtFecha.getText().substring(4, 6));
-               int dia = Integer.parseInt(TxtFecha.getText().substring(6, 8));
-               if(Mes <=0|| Mes >12){
-                   JOptionPane.showMessageDialog(this, "ERROR EN LA FECHA",
-                           "FECHA NO VÁLIDA", JOptionPane.ERROR_MESSAGE);
-               }else if(dia<=0 || dia>31){
-                   JOptionPane.showMessageDialog(this, "ERROR EN EL DIA",
-                           "DIA NO VÁLIDO", JOptionPane.ERROR_MESSAGE);
+               int Dia = Integer.parseInt(TxtFecha.getText().substring(6, 8));
+               if(Mes<=0 || Mes>12){
+                   JOptionPane.showMessageDialog(this, "Hay un error en el mes. Intentalo de nuevo",
+                           "No válido", JOptionPane.ERROR_MESSAGE);
+               }else if(Dia<0 || Dia>31){
+                   JOptionPane.showMessageDialog(this, "Hay un error en el dia. Por favor revisar",
+                           "No válido", JOptionPane.ERROR_MESSAGE);
                }else{
-                   TxtResultadoF.setText(Anio+"/"+Mes+"/"+dia);
+                   TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
                }
+               
            }else{
                JOptionPane.showMessageDialog(this, "El nunmero"+TxtFecha+"debe ser positivo",
                            "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
+           
            }
-       }else{
-               JOptionPane.showMessageDialog(this, "No se permite mayor a 8",
-                           "Cantidad no permitidaS", JOptionPane.ERROR_MESSAGE);
-           }
-       } else if(fecha.length()>8){
-           JOptionPane.showMessageDialog(this, "FORMATO INCORRECTO",
-                           "FORMATO NO VALIDO", JOptionPane.ERROR_MESSAGE);
-       }else{
-           JOptionPane.showMessageDialog(this, "Deben ser 8 digitos",
-                           "FORMATO NO VALIDO", JOptionPane.ERROR_MESSAGE);
+       
+       }
+       if(fecha.length()>8 && number<0){
+             JOptionPane.showMessageDialog(this, "Debe tener 8 digitos y ser mayor a 0",
+                           "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
+       }
+       if(fecha.length()<8 && number<0){
+           JOptionPane.showMessageDialog(this, "Hay algo que está mal. Revisa e intentalo de nuevo",
+                           "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
+       }
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(this, "No se aceptan letras",
+                   "No está permitido", JOptionPane.ERROR_MESSAGE);
        }
        
-
     }//GEN-LAST:event_BtnMostrarActionPerformed
 
     private void TxtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaActionPerformed
@@ -372,8 +363,8 @@ public boolean isNumero (String numero){
     private javax.swing.JLabel LblFecha;
     private javax.swing.JLabel LblResultado;
     private javax.swing.JTextField TxtFecha;
+    private javax.swing.JTextField TxtFechaFinal;
     private javax.swing.JTextArea TxtResultado;
-    private javax.swing.JTextField TxtResultadoF;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem aboutMenuItem1;
     private javax.swing.JMenuItem contentsMenuItem;

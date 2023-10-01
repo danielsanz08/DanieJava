@@ -193,18 +193,6 @@ public class Form06 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
-public boolean isNumero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-      }
 
       
     
@@ -212,34 +200,24 @@ public boolean isNumero (String numero){
      
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+    try{
+        int mayor=0;
+    int menor=0;
+    int medio=0;
       
-       
-       
-           int mayor=0;
-        int menor=0;
-        int medio=0;
-      
-           int num1=Integer.parseInt(TxtNumeroUno.getText());
-       int num2=Integer.parseInt(TxtNumeroDos.getText());
-       int num3= Integer.parseInt(TxtNumeroTres.getText());
+    int num1=Integer.parseInt(TxtNumeroUno.getText());
+    int num2=Integer.parseInt(TxtNumeroDos.getText());
+    int num3= Integer.parseInt(TxtNumeroTres.getText());
         
-         if (num1==num2 && num1==num3 ) {
+    if (num1==num2 && num1==num3 && num2==num3 ) {
            JOptionPane.showMessageDialog(this, "Números iguales",
                    "IGUALES", JOptionPane.ERROR_MESSAGE);
        }
-       if (num1==num3) {
-        JOptionPane.showMessageDialog(this, "Números iguales",
-                   "IGUALES", JOptionPane.ERROR_MESSAGE);
-       }else if(num1==num2){
-           JOptionPane.showMessageDialog(this, "Números iguales"
-                   ,"No válido", JOptionPane.ERROR_MESSAGE);
-       }
-       if(num2==num3){
+    if (num1==num2 || num1==num3 || num2==num3 ) {
            JOptionPane.showMessageDialog(this, "Números iguales",
-                   "No válido", JOptionPane.ERROR_MESSAGE);
-       }
-      if(num1>0 && num2>00 && num3>0){
+                   "IGUALES", JOptionPane.ERROR_MESSAGE);
+       }else{
+         if(num1>0 && num2>00 && num3>0){
           if((num1>num2)&&(num1>num3)){
             mayor = num1;
             medio = Math.max(num2, num3);
@@ -260,10 +238,13 @@ public boolean isNumero (String numero){
           JOptionPane.showMessageDialog(this, "Números negativos",
                    "No válido", JOptionPane.ERROR_MESSAGE);
       }
-       
-       
-    
-         
+ 
+    }
+    }catch(NumberFormatException e){
+        JOptionPane.showMessageDialog(this, "No se permiten letras", 
+                "No permitido", JOptionPane.ERROR_MESSAGE);
+    }
+   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TxtNumeroTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNumeroTresActionPerformed

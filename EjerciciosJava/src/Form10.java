@@ -182,20 +182,10 @@ public class Form10 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
+   
     private void BtnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarActionPerformed
         // TODO add your handling code here:
+    try{
         int seg = Integer.parseInt(TxtSegundos.getText());
         int HoraF = 0, MinutoF=0, Seg=0;
         
@@ -206,6 +196,10 @@ public class Form10 extends javax.swing.JFrame {
         TxtConversion.setText(HoraF+"Hrs"+MinutoF+"mins"+Seg+"Sgs");
         }else{
             JOptionPane.showMessageDialog(this, "No puedes digitar números negativos",
+                    "Digita bien por favor", JOptionPane.ERROR_MESSAGE);
+        }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "No se admiten letras",
                     "Digita bien por favor", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_BtnMostrarActionPerformed

@@ -176,46 +176,37 @@ public class Frm12 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
     private void BtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVerificarActionPerformed
         // TODO add your handling code here:
-        int num=Integer.parseInt(TxtNumero.getText());
-        String capicua=TxtResultado.getText();
-        String Par= TxtResultado.getText();
-        int inv=0;
-        int aux=num;
+       try{
+            int num=Integer.parseInt(TxtNumero.getText());
+            String capicua=TxtResultado.getText();
+            String Par= TxtResultado.getText();
+            int inver=0;
+            int aux=num;
         
-        while(aux>0){
-           int  digito=aux%10;
-           inv=inv*10+digito;
-           aux=aux/10;
-        }
-        if(num==inv && num%2==0){
+            while(aux>0){
+                int  digito=aux%10;
+                inver=inver*10+digito;
+                aux=aux/10;
+                }
+            if(num==inver && num%2==0){
             
-            TxtResultado.setText(num+" "+"Es un numero capicua\n y numero par");
-        }
-        if(num==inv && num%2 !=0){
-            TxtResultado.setText(num+" "+"Es un numero capicua \n y el numero es impar");
-        }
-        if(num!=inv && num%2==0){
-            TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero par");
-        }
-        if(num!=inv && num%2!=0){
-            TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero impar");
-        }
-        
-        
+                TxtResultado.setText(num+" "+"Es un numero capicua\n y numero par");
+                }
+            if(num==inver && num%2 !=0){
+                TxtResultado.setText(num+" "+"Es un numero capicua \n y el numero es impar");
+                }
+            if(num!=inver && num%2==0){
+                TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero par");
+                }
+            if(num!=inver && num%2!=0){
+                TxtResultado.setText(num+" "+"No es un numero capicua \n y es numero impar");
+                }
+       }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(this, "Nada de letras",
+                   "OJO", JOptionPane.ERROR_MESSAGE);
+       }
     }//GEN-LAST:event_BtnVerificarActionPerformed
 
     /**

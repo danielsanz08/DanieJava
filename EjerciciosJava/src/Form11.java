@@ -178,49 +178,42 @@ public class Form11 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    public boolean Numero (String numero){
-      try{
-          int Number = Integer.parseInt(numero);
-          return true;
-      } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un número valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
-      
-        return false;
-      }
-    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int Numero= Integer.parseInt(TxtNumero.getText());
+        try{
+            int Numero= Integer.parseInt(TxtNumero.getText());
         
-        if(Numero<=0){
-            JOptionPane.showMessageDialog(this, "No se aceptan numeros negativos",
+            if(Numero<=0){
+                JOptionPane.showMessageDialog(this, "No se aceptan numeros negativos",
                 "No válido", JOptionPane.ERROR_MESSAGE);
-        }
-        if(Numero>=100 && Numero<999){
-        int digito1= Numero % 10;
-        int digito2 = (Numero/10)%10;
-        int digito3 = Numero/100;
-        TxtResultado.setText(digito1+","+digito2+","+digito3);
-    }
-        
-        if(Numero>=10 && Numero<=99){
-        int digito1= Numero % 10;
-        int digito2 = (Numero/10)%10;
-        int digito3 = Numero/100;
-        TxtResultado.setText(digito1+","+digito2);
-    }
-     
-        if (Numero<10){
+                 }
             
-        JOptionPane.showMessageDialog(this, "No se aceptan menores de 2 digitos",
+            if(Numero>=100 && Numero<999){
+                int digito1= Numero % 10;
+                int digito2 = (Numero/10)%10;
+                int digito3 = Numero/100;
+                TxtResultado.setText(digito1+","+digito2+","+digito3);
+                }
+        
+            if(Numero>=10 && Numero<=99){
+                int digito1= Numero % 10;
+                int digito2 = (Numero/10)%10;
+                int digito3 = Numero/100;
+                TxtResultado.setText(digito1+","+digito2);
+                }
+            String num= TxtNumero.getText();
+            if(num.length()>3){
+                 JOptionPane.showMessageDialog(this, "No se aceptan mayores de 3 digitos",
+                "No válido", JOptionPane.ERROR_MESSAGE);
+                }
+             if (num.length()<2){
+            
+                 JOptionPane.showMessageDialog(this, "No se aceptan menores de 2 digitos",
                 "No válido", JOptionPane.ERROR_MESSAGE);
     }
-        String num= TxtNumero.getText();
-        if(num.length()>=3){
-            JOptionPane.showMessageDialog(this, "No se aceptan mayores de 3 digitos",
-                "No válido", JOptionPane.ERROR_MESSAGE);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "No se deben ingresar letras",
+                    "NO LETRAS", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
