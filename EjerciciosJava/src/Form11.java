@@ -206,11 +206,11 @@ public class Form11 extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "No se aceptan mayores de 3 digitos",
                 "No válido", JOptionPane.ERROR_MESSAGE);
                 }
-             if (num.length()<2){
+            if (num.length()<2){
             
                  JOptionPane.showMessageDialog(this, "No se aceptan menores de 2 digitos",
                 "No válido", JOptionPane.ERROR_MESSAGE);
-    }
+               }
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this, "No se deben ingresar letras",
                     "NO LETRAS", JOptionPane.ERROR_MESSAGE);

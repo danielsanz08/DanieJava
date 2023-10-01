@@ -169,53 +169,53 @@ public class Form09 extends javax.swing.JFrame {
         // TODO add your handling code here:
        try{
             String mes = (String)TxtMesNumero.getText();
-        int meses= Integer.parseInt(TxtMesNumero.getText());
-        int Mes = Integer.parseInt(TxtMesNumero.getText());
+            int meses= Integer.parseInt(TxtMesNumero.getText());
+            int Mes = Integer.parseInt(TxtMesNumero.getText());
         
-     if(Mes<0 || mes.length()<2 || mes.length()>2){
-         JOptionPane.showMessageDialog(this, "!Ojo¡ movimiento no válido",
+            if(Mes<0 || mes.length()<2 || mes.length()>2){
+                JOptionPane.showMessageDialog(this, "!Ojo¡ movimiento no válido",
                  "ERROR", JOptionPane.ERROR_MESSAGE);
-     }else{
-         if(meses>=01 && meses<=12){
-        if(mes.length()==2){
-        if(mes.equals("01")){
-             TxtMesLetra.setText("Enero");
-         }else if(mes.equals("02")){
-             TxtMesLetra.setText("Febrero");
-         }         
-        if(mes.equals("03")){
-            TxtMesLetra.setText("Marzo");
-        }else if(mes.equals("04")){
-            TxtMesLetra.setText("Abril");
-        }
-        if(mes.equals("05")){
-            TxtMesLetra.setText("Mayo");
-        }else if(mes.equals("06")){
-            TxtMesLetra.setText("Junio");
-        }
-        if(mes.equals("07")){
-            TxtMesLetra.setText("Julio");
-        }else if(mes.equals("08")){
-            TxtMesLetra.setText("Agosto");
-        }
-        if(mes.equals("09")){
-            TxtMesLetra.setText("Septiembre");
-        }else if(mes.equals("10")){
-            TxtMesLetra.setText("Octubre");
-        }
-        if(mes.equals("11")){
-            TxtMesLetra.setText("Noviembre");
-        }else if(mes.equals("12")){
-            TxtMesLetra.setText("Diciembre");
-        }
+            }else{
+                 if(meses>=01 && meses<=12){
+                    if(mes.length()==2){
+                        if(mes.equals("01")){
+                            TxtMesLetra.setText("Enero");
+                        }else if(mes.equals("02")){
+                            TxtMesLetra.setText("Febrero");
+                        }         
+                        if(mes.equals("03")){
+                            TxtMesLetra.setText("Marzo");
+                        }else if(mes.equals("04")){
+                            TxtMesLetra.setText("Abril");
+                        }
+                        if(mes.equals("05")){
+                            TxtMesLetra.setText("Mayo");
+                        }else if(mes.equals("06")){
+                            TxtMesLetra.setText("Junio");
+                        }
+                        if(mes.equals("07")){
+                            TxtMesLetra.setText("Julio");
+                        }else if(mes.equals("08")){
+                            TxtMesLetra.setText("Agosto");
+                        }
+                        if(mes.equals("09")){
+                            TxtMesLetra.setText("Septiembre");
+                        }else if(mes.equals("10")){
+                            TxtMesLetra.setText("Octubre");
+                        }
+                        if(mes.equals("11")){
+                            TxtMesLetra.setText("Noviembre");
+                        }else if(mes.equals("12")){
+                             TxtMesLetra.setText("Diciembre");
+                        }
         
-        }else{
-         JOptionPane.showMessageDialog(this, "Solo se aceptan numeros entre el 01 y 12",
-                 "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(this, "Solo se aceptan numeros entre el 01 y 12",
+                        "ERROR", JOptionPane.ERROR_MESSAGE);
         
-        }
-     }
-     }
+                    }
+                }
+                }
        }catch(NumberFormatException e){
            JOptionPane.showMessageDialog(this, "No se permiten letras",
                    "NADA DE LETRAS", JOptionPane.ERROR_MESSAGE);

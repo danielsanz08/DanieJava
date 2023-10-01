@@ -202,44 +202,44 @@ public class Form06 extends javax.swing.JFrame {
         // TODO add your handling code here:
     try{
         int mayor=0;
-    int menor=0;
-    int medio=0;
+        int menor=0;
+        int medio=0;
       
-    int num1=Integer.parseInt(TxtNumeroUno.getText());
-    int num2=Integer.parseInt(TxtNumeroDos.getText());
-    int num3= Integer.parseInt(TxtNumeroTres.getText());
+        int num1=Integer.parseInt(TxtNumeroUno.getText());
+        int num2=Integer.parseInt(TxtNumeroDos.getText());
+        int num3= Integer.parseInt(TxtNumeroTres.getText());
         
-    if (num1==num2 && num1==num3 && num2==num3 ) {
+        if (num1==num2 && num1==num3 && num2==num3 ) {
            JOptionPane.showMessageDialog(this, "Números iguales",
                    "IGUALES", JOptionPane.ERROR_MESSAGE);
        }
-    if (num1==num2 || num1==num3 || num2==num3 ) {
+        if (num1==num2 || num1==num3 || num2==num3 ) {
            JOptionPane.showMessageDialog(this, "Números iguales",
                    "IGUALES", JOptionPane.ERROR_MESSAGE);
        }else{
-         if(num1>0 && num2>00 && num3>0){
-          if((num1>num2)&&(num1>num3)){
-            mayor = num1;
-            medio = Math.max(num2, num3);
-            menor = Math.min(num2, num3); 
-       }else if((num2>num1)&&(num2>num3)){
-            mayor= num2;
-            medio = Math.max(num1, num3);
-            menor= Math.min(num1, num3);
-       }else{
-            mayor= num3;
-            medio =Math.max(num1, num2);
-            menor = Math.min(num1, num2);
-       }
+            if(num1>0 && num2>00 && num3>0){
+                if((num1>num2)&&(num1>num3)){
+                mayor = num1;
+                medio = Math.max(num2, num3);
+                menor = Math.min(num2, num3); 
+               }else if((num2>num1)&&(num2>num3)){
+                mayor= num2;
+                medio = Math.max(num1, num3);
+                menor= Math.min(num1, num3);
+                }else{
+                 mayor= num3;
+                 medio =Math.max(num1, num2);
+                 menor = Math.min(num1, num2);
+                  }
        //Mostrar resultado
        TxtResultado.setText(mayor+"El número es el mayor \n"+medio+"El número es el del medio \n"+menor+"El numero es el menor");
        
-      }else{
-          JOptionPane.showMessageDialog(this, "Números negativos",
+            }else{
+                 JOptionPane.showMessageDialog(this, "Números negativos",
                    "No válido", JOptionPane.ERROR_MESSAGE);
-      }
+                 }
  
-    }
+           }
     }catch(NumberFormatException e){
         JOptionPane.showMessageDialog(this, "No se permiten letras", 
                 "No permitido", JOptionPane.ERROR_MESSAGE);

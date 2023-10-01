@@ -183,7 +183,7 @@ public class Frm14 extends javax.swing.JFrame {
           int Number = Integer.parseInt(numero);
           return true;
       } catch(NumberFormatException NFE){
-         JOptionPane.showMessageDialog(this, 
+            JOptionPane.showMessageDialog(this, 
                     "El texto "+numero +" no es un número valido", 
                     "Numero Invalido", JOptionPane.ERROR_MESSAGE);
       

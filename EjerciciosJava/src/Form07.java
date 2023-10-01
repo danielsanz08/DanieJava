@@ -199,12 +199,12 @@ public class Form07 extends javax.swing.JFrame {
             if((cUno<=0) ||(cDos<=0)){
               JOptionPane.showMessageDialog(this, "ERROR",
                       "No permitido", JOptionPane.ERROR_MESSAGE);
-          }else{
-          resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
+            }else{
+               resultado = (double)Math.sqrt(cUno*cUno+cDos*cDos);
           
                TxtResultado.setText("La hipotenusa es :" +resultado); 
-          }
-          }catch(NumberFormatException e){
+            }
+        }catch(NumberFormatException e){
            JOptionPane.showMessageDialog(this, "No se aceptan letras",
                    "Movimiento no permitido", JOptionPane.ERROR_MESSAGE);
        

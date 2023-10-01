@@ -276,8 +276,8 @@ public class Form05 extends javax.swing.JFrame {
 
        try{
            String fecha = TxtFecha.getText();
-       int number = Integer.parseInt(TxtFecha.getText());
-       if(fecha.length()==8){
+           int number = Integer.parseInt(TxtFecha.getText());
+           if(fecha.length()==8){
            if(number>0){
                int Anio = Integer.parseInt(TxtFecha.getText().substring(0, 4));
                int Mes = Integer.parseInt(TxtFecha.getText().substring(4, 6));
@@ -285,28 +285,28 @@ public class Form05 extends javax.swing.JFrame {
                if(Mes<=0 || Mes>12){
                    JOptionPane.showMessageDialog(this, "Hay un error en el mes. Intentalo de nuevo",
                            "No válido", JOptionPane.ERROR_MESSAGE);
-               }else if(Dia<0 || Dia>31){
-                   JOptionPane.showMessageDialog(this, "Hay un error en el dia. Por favor revisar",
+                   
+                     }else if(Dia<0 || Dia>31){
+                         JOptionPane.showMessageDialog(this, "Hay un error en el dia. Por favor revisar",
                            "No válido", JOptionPane.ERROR_MESSAGE);
-               }else{
-                   TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
-               }
+                     }else{
+                           TxtFechaFinal.setText(Anio+"/"+Mes+"/"+Dia);
+                            }
                
-           }else{
-               JOptionPane.showMessageDialog(this, "El nunmero"+TxtFecha+"debe ser positivo",
+                     }else{
+                           JOptionPane.showMessageDialog(this, "El nunmero"+TxtFecha+"debe ser positivo",
                            "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
-           
            }
        
        }
-       if(fecha.length()>8 && number<0){
-             JOptionPane.showMessageDialog(this, "Debe tener 8 digitos y ser mayor a 0",
+            if(fecha.length()>8 && number<0){
+                   JOptionPane.showMessageDialog(this, "Debe tener 8 digitos y ser mayor a 0",
                            "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
-       }
-       if(fecha.length()<8 && number<0){
+                 }
+            if(fecha.length()<8 && number<0){
            JOptionPane.showMessageDialog(this, "Hay algo que está mal. Revisa e intentalo de nuevo",
                            "NUMERO INVALIDO", JOptionPane.ERROR_MESSAGE);
-       }
+                  }
        }catch(NumberFormatException e){
            JOptionPane.showMessageDialog(this, "No se aceptan letras",
                    "No está permitido", JOptionPane.ERROR_MESSAGE);

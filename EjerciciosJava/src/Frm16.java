@@ -65,7 +65,7 @@ public class Frm16 extends javax.swing.JFrame {
         jLabel2.setText("<html><center>Digite la frase</center>");
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 130, 230, 60);
+        jLabel2.setBounds(90, 110, 230, 60);
 
         BtnMostrar.setBackground(new java.awt.Color(255, 0, 0));
         BtnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
@@ -82,7 +82,7 @@ public class Frm16 extends javax.swing.JFrame {
 
         TxtCaracter.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jPanel1.add(TxtCaracter);
-        TxtCaracter.setBounds(40, 220, 150, 50);
+        TxtCaracter.setBounds(10, 190, 320, 100);
 
         Txtresultado.setColumns(20);
         Txtresultado.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -92,10 +92,10 @@ public class Frm16 extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(40, 330, 410, 130);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mario wallpaper.jpg"))); // NOI18N
         jLabel1.setOpaque(true);
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 480);
+        jLabel1.setBounds(0, 0, 564, 1015);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");

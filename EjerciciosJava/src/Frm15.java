@@ -177,7 +177,7 @@ public class Frm15 extends javax.swing.JFrame {
     private String ConvertirNumeroEscrito(int num){
          String[] unidad = {
             "", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"
-        };
+          };
          String[] decena = {
             "", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"
         };
@@ -187,7 +187,7 @@ public class Frm15 extends javax.swing.JFrame {
              return "Dieci" + unidad[num %10];
              
          }else{
-             return decena[num / 10]+(num % 10 !=0? " y"+unidad[num % 10]: "");
+             return decena[num / 10]+(num % 10 !=0? " "+"y"+" "+unidad[num % 10]: "");
          }
          
          
@@ -206,13 +206,30 @@ public class Frm15 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El numero que se ingresó no es permitido",
                     "Fuera del rango", JOptionPane.ERROR_MESSAGE);
         }else{
-            if(num==12){
-                TxtResultado.setText("Se escribe"+"  "+"Doce");
-            }
+            
             String numeroEscrito= ConvertirNumeroEscrito(num);
-            
-            TxtResultado.setText("Se escribe"+"  "+ numeroEscrito);
-            
+            if(num>=1 && num<=9 || num>15){
+                TxtResultado.setText("Se escribe"+" "+ numeroEscrito);
+        }
+            if(num>=10 || num<=15){
+                 String Numero = TxtNumero.getText();
+        
+            if(Numero.equals("10")){
+                TxtResultado.setText("Se escribe"+" "+"Diez");
+            }else if(Numero.equals("11")){
+                TxtResultado.setText("Se escribe"+" "+"Once");
+            }
+            if(Numero.equals("12")){
+                TxtResultado.setText("Se escribe"+" "+"Doce");
+            }else if(Numero.equals("13")){
+                TxtResultado.setText("Se escribe"+" "+"Trece");
+            }
+            if(Numero.equals("14")){
+                TxtResultado.setText("Se escribe"+" "+"Catorce");
+            }else if(Numero.equals("15")){
+                TxtResultado.setText("Se escribe"+" "+"Quince");
+            }
+            }
         }
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(this, "No se admiten letras",

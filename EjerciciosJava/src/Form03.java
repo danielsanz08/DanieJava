@@ -1,3 +1,7 @@
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/Application.java to edit this template
@@ -25,6 +29,13 @@ public class Form03 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        TxtRadio = new javax.swing.JTextField();
+        btnMostrar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TxtResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -42,8 +53,58 @@ public class Form03 extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
+        jPanel1.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jLabel2.setText("<html><center>Radio de un circulo</center>");
+        jLabel2.setOpaque(true);
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(140, 39, 241, 30);
+
+        jLabel3.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
+        jLabel3.setText("<html><center>Digite numero</center>");
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(33, 150, 144, 35);
+
+        TxtRadio.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        TxtRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtRadioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TxtRadio);
+        TxtRadio.setBounds(51, 229, 136, 49);
+
+        btnMostrar.setBackground(new java.awt.Color(255, 0, 51));
+        btnMostrar.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        btnMostrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnMostrar.setText("Mostrar");
+        btnMostrar.setOpaque(true);
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMostrar);
+        btnMostrar.setBounds(289, 224, 145, 59);
+
+        TxtResultado.setColumns(20);
+        TxtResultado.setFont(new java.awt.Font("Century Schoolbook", 3, 14)); // NOI18N
+        TxtResultado.setRows(5);
+        jScrollPane1.setViewportView(TxtResultado);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(40, 330, 370, 130);
+
+        jLabel1.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel1.setOpaque(true);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 480, 480);
+
+        getContentPane().add(jPanel1);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -108,23 +169,35 @@ public class Form03 extends javax.swing.JFrame {
 
         setJMenuBar(menuBar);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void TxtRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtRadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtRadioActionPerformed
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        // TODO add your handling code here:
+       try{
+            double Number = Double.parseDouble(TxtRadio.getText());
+            if(Number > 0){
+                DecimalFormat df = new DecimalFormat("0.00");
+                double Resultado = Math.PI * Math.pow(Number, 2);
+                TxtResultado.setText("El radio es:"+ " "+Resultado);
+               
+            }else{
+                JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero",
+                        "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
+            }
+       }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "No se permiten letras",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+       }
+    }//GEN-LAST:event_btnMostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +235,10 @@ public class Form03 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField TxtRadio;
+    private javax.swing.JTextArea TxtResultado;
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JButton btnMostrar;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -172,6 +248,10 @@ public class Form03 extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

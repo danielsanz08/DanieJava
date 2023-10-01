@@ -33,7 +33,8 @@ public class Frm13 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         TxtCaracter = new javax.swing.JTextField();
         BtnMostrar = new javax.swing.JButton();
-        Txtresultado = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Txtresultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -81,11 +82,14 @@ public class Frm13 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnMostrar);
-        BtnMostrar.setBounds(330, 260, 120, 60);
+        BtnMostrar.setBounds(340, 200, 120, 60);
 
-        Txtresultado.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
-        jPanel1.add(Txtresultado);
-        Txtresultado.setBounds(40, 330, 410, 130);
+        Txtresultado.setColumns(20);
+        Txtresultado.setRows(5);
+        jScrollPane1.setViewportView(Txtresultado);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 310, 460, 150);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/giphy.gif"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -176,7 +180,7 @@ public class Frm13 extends javax.swing.JFrame {
 private int contarOcurrencias(String texto, String palabra) {
          int contador=0;
          int indice = texto.indexOf(palabra);
-         while(indice != 1){
+         while(indice != -1){
              contador++;
              indice = texto.indexOf(palabra, indice+1);
          }
@@ -230,7 +234,7 @@ private int contarOcurrencias(String texto, String palabra) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnMostrar;
     private javax.swing.JTextField TxtCaracter;
-    private javax.swing.JTextField Txtresultado;
+    private javax.swing.JTextArea Txtresultado;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -244,6 +248,7 @@ private int contarOcurrencias(String texto, String palabra) {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

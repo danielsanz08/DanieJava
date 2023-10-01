@@ -198,7 +198,7 @@ public class Form10 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No puedes digitar números negativos",
                     "Digita bien por favor", JOptionPane.ERROR_MESSAGE);
         }
-        }catch(NumberFormatException e){
+    }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(this, "No se admiten letras",
                     "Digita bien por favor", JOptionPane.ERROR_MESSAGE);
         }
